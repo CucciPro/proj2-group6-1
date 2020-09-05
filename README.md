@@ -36,7 +36,7 @@ The walkthrough demonstrates the following :
 1. Clone repo : git clone <this_repo>
 1. Change directory into the repo directory created from the clone command : cd <repo_directory>
 1. Initialize npm : npm init -y
-1. Install packages : npm install express express-session sequelize mysql2 express-handlebars dotenv bycypt
+1. Install packages : npm install express express-session sequelize mysql2 express-handlebars dotenv bcrypt
 1. If you don't have nodemon installed globally already, do that now.  If you do, skip this step : npm install -g nodemon
 1. Install nodemon as dev dependency for this repo (if not installed globally you will encounter an error, install globally first [command found in step above]) : npm install --save-dev nodemon
 1. Start mysql (this step is where the walkthrough video starts) : mysql -u root -p
@@ -45,6 +45,6 @@ The walkthrough demonstrates the following :
 1. Optional, confirm that the db was created : show databases;
 1. Quit mysql : \q;
 1. Seed db : npm run seed
-1. Start the server : npm start
+1. Start the server with either of the following commands : npm start -or- node server.js
 1. Additonial items tbd
 

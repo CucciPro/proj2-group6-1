@@ -5,13 +5,13 @@ class Plant_History extends Model {}
 
 History.init(
   {
-    historyid: {
+    history_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
-    plantid: {
+    plant_id: {
         type: DataTypes.INTEGER,
         allowNull: false
     },

@@ -5,6 +5,7 @@ This project demonstrates the use of the following packages :
 - <a href="https://www.npmjs.com/package/express-session" target="_blank">express-session</a>
 - <a href="https://www.npmjs.com/package/express-handlebars" target="_blank">express-handlebars</a>
 - <a href="https://www.npmjs.com/package/sequelize" target="_blank">sequelize</a>
+- <a href="hhttps://www.npmjs.com/package/connect-session-sequelize" target="_blank">connect session sequelize</a>
 - <a href="https://www.npmjs.com/package/mysql2" target="_blank">mysql12</a>
 - <a href="https://www.npmjs.com/package/dotenv" target="_blank">dotenv</a>
 - <a href="https://www.npmjs.com/package/bcrypt" target="_blank">bycrypt</a>
@@ -36,7 +37,7 @@ The walkthrough demonstrates the following :
 1. Clone repo : git clone <this_repo>
 1. Change directory into the repo directory created from the clone command : cd <repo_directory>
 1. Initialize npm : npm init -y
-1. Install packages : npm install express express-session sequelize mysql2 express-handlebars dotenv bcrypt
+1. Install packages : npm install express express-session sequelize mysql2 express-handlebars connect-session-sequelize dotenv bcrypt
 1. If you don't have nodemon installed globally already, do that now.  If you do, skip this step : npm install -g nodemon
 1. Install nodemon as dev dependency for this repo (if not installed globally you will encounter an error, install globally first [command found in step above]) : npm install --save-dev nodemon
 1. Create a .env file in the root directory and add values for DB_NAME, DB_USER, and DB_PW

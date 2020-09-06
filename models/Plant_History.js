@@ -1,9 +1,9 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
+const sequelize = require('../config/connection');
 
 class Plant_History extends Model {}
 
-History.init(
+Plant_History.init(
   {
     history_id: {
         type: DataTypes.INTEGER,
@@ -16,7 +16,7 @@ History.init(
         allowNull: false
     },
     dtstamp: {
-        type: DataTypes.DATETIME,
+        type: DataTypes.DATE,
         defaultValue: Sequelize.NOW
     }, 
     rec_type: DataTypes.STRING, 

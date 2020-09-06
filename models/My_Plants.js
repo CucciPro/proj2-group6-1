@@ -1,5 +1,5 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
+const sequelize = require('../config/connection');
 
 class My_Plants extends Model {}
 
@@ -26,7 +26,7 @@ My_Plants.init(
           len: [100]
       }
     },
-    acquired_date: DataTypes.DATETIME,
+    acquired_date: DataTypes.DATE,
     acquired_source: DataTypes.STRING,
     acquired_origin: DataTypes.STRING,
     acquired_width: {

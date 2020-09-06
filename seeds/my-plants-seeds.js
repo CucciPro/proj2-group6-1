@@ -1,11 +1,11 @@
-const { Plants } = require('../models');
+const { My_Plants } = require('../models');
 
 const plantsData = [
   {
     user_id: 1, 
     species_id: 1, 
     identifier: '1st Bay Leaf Tree Along Back Wall', 
-    acquired_date: TIMESTAMP('2019-05-23'),
+    acquired_date: '2019-05-23 09:20:00',
     acquired_source: 'Lowe\s',
     acquired_origin: 'Civano Growers',
     acquired_width: 7,
@@ -16,7 +16,7 @@ const plantsData = [
     user_id: 1, 
     species_id: 1, 
     identifier: '2nd Bay Leaf Tree Along Back Wall', 
-    acquired_date: TIMESTAMP('2019-05-23'),
+    acquired_date: '2019-05-23 09:30:00',
     acquired_source: 'Lowe\'s',
     acquired_origin: 'Civano Growers',
     acquired_width: 7,
@@ -25,6 +25,6 @@ const plantsData = [
   },
 ];
 
-const seedMyPlants = () => Plants.bulkCreate(plantsData);
+const seedMyPlants = () => My_Plants.bulkCreate(plantsData);
 
 module.exports = seedMyPlants;

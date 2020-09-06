@@ -1,9 +1,9 @@
-const { PlantHistory } = require('../models');
+const { Plant_History } = require('../models');
 
 const plantHistoryData = [
   {
     plant_id: 1, 
-    dtstamp: TIMESTAMP('2019-05-24'), 
+    dtstamp: '2019-05-24  09:20:00', 
     rec_type: 'General', 
     loc: 'Outdoors',
     in_ground: 0,
@@ -13,7 +13,7 @@ const plantHistoryData = [
   },
   {
     plant_id: 1, 
-    dtstamp: TIMESTAMP('2019-06-08'), 
+    dtstamp: '2019-06-08 09:20:00', 
     rec_type: 'General', 
     loc: 'Outdoors',
     in_ground: 0,
@@ -23,7 +23,7 @@ const plantHistoryData = [
   },
   {
     plant_id: 1, 
-    dtstamp: TIMESTAMP('2019-09-15'), 
+    dtstamp: '2019-09-15 09:20:00', 
     rec_type: 'Feeding', 
     loc: 'Outdoors',
     in_ground: 0,
@@ -33,7 +33,7 @@ const plantHistoryData = [
   },
   {
     plant_id: 2, 
-    dtstamp: TIMESTAMP('2019-05-24'), 
+    dtstamp: '2019-05-24 09:20:00', 
     rec_type: 'General', 
     loc: 'Outdoors',
     in_ground: 0,
@@ -43,7 +43,7 @@ const plantHistoryData = [
   },
   {
     plant_id: 2, 
-    dtstamp: TIMESTAMP('2019-06-08'), 
+    dtstamp: '2019-06-08 09:20:00', 
     rec_type: 'General', 
     loc: 'Outdoors',
     in_ground: 0,
@@ -53,7 +53,7 @@ const plantHistoryData = [
   },
   {
     plant_id: 2, 
-    dtstamp: TIMESTAMP('2019-09-15'), 
+    dtstamp: '2019-09-15 09:20:00', 
     rec_type: 'Feeding', 
     loc: 'Outdoors',
     in_ground: 0,
@@ -63,6 +63,6 @@ const plantHistoryData = [
   },
 ];
 
-const seedPlantHistory = () => PlantHistory.bulkCreate(plantHistoryData);
+const seedPlantHistory = () => Plant_History.bulkCreate(plantHistoryData);
 
 module.exports = seedPlantHistory;

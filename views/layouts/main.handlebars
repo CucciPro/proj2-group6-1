@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project Name TBD</title>
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+
+    <body>
+
+        <nav>
+            <div>
+                <h1><a href="/">Project Name TBD</a></h1>
+            </div>
+            <div>
+                <ul>
+                    <!-- login nav item should only show if user is not logged in or user is not logged in and are on the join page -->
+                    <li><a href="/login">Login</a></li>
+                    <!-- join nav item should only show if user is not logged in and user is on login page -->
+                    <li><a href="/join">Join</a></li>
+                    <!-- dashboard nav item should only show if user is logged in and not on the dashboard page -->
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <!-- species nav item should only show if user is logged in and user is not on the species page -->
+                    <li><a href="/species">Species</a></li>
+                    <!-- logout nav item should only show if user is logged in -->
+                    <li><a href="#" id="logout-link">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header><!-- header image goes here --></header>
+
+        <main>
+            {{{body}}}
+        </main>
+
+        <footer>
+            <div>A Jasso, McClennan, Norman, Senneff Production</div>
+            <div>All Rights Reserved</div>
+        </footer>
+
+    </body>
+
+</html>
+<script src="/javascript/logout.js"></script>

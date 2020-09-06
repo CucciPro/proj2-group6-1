@@ -1,0 +1,36 @@
+{
+  "name": "proj2-group6",
+  "version": "1.0.0",
+  "description": "This project demonstrates the use of the following packages : \r - <a href=\"https://www.npmjs.com/package/express\" target=\"_blank\">express</a>\r - <a href=\"https://www.npmjs.com/package/express-session\" target=\"_blank\">express-session</a>\r - <a href=\"https://www.npmjs.com/package/express-handlebars\" target=\"_blank\">express-handlebars</a>\r - <a href=\"https://www.npmjs.com/package/sequelize\" target=\"_blank\">sequelize</a>\r - <a href=\"https://www.npmjs.com/package/mysql2\" target=\"_blank\">mysql12</a>\r - <a href=\"https://www.npmjs.com/package/dotenv\" target=\"_blank\">dotenv</a>\r - <a href=\"https://www.npmjs.com/package/bcrypt\" target=\"_blank\">bycrypt</a>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnorman15/proj2-group6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nnorman15/proj2-group6/issues"
+  },
+  "homepage": "https://github.com/nnorman15/proj2-group6#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

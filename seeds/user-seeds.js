@@ -10,7 +10,7 @@ const userData = [
   {
     user_name: 'Paulie',
     user_email: 'nnormansv+proj2.user02@gmail.com',
-    user_pass: bcrypt.hashSync('k9h5', 10),
+    user_pass : bcrypt.hashSync('k9h5', 10),
   },
 ];
 

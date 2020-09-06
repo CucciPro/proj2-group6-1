@@ -2,13 +2,15 @@ const router = require("express").Router();
 const { User } = require("../../models");
 
 router.post("/", (req, res) => {
+  console.log("req it. req it good user-routes line 5");
+  //console.log(req.body);
   User.create({
-    username: req.body.username,
+    user_name: req.body.username,
     password: req.body.password
   }).then(dbUserData => {
       req.session.save(() => {
-      req.session.userId = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.userId = dbUserData.user_id;
+      req.session.username = dbUserData.user_name;
       req.session.loggedIn = true;
 
       res.json(dbUserData);
@@ -20,8 +22,10 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  console.log("req it. req it good user-routes line 25");
+  //console.log(req.body);
   User.findOne({
-    where: { username: req.body.username }
+    where: { user_name: req.body.user_name }
   }).then(dbUserData => {
     if (!dbUserData) {
       res.status(400).json({ message: 'No user account found!' });
@@ -36,8 +40,8 @@ router.post("/login", (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.userId = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.userId = dbUserData.user_id;
+      req.session.username = dbUserData.user_name;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });

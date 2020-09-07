@@ -22,6 +22,7 @@ User.init(
         },
         user_email: {
             type: DataTypes.STRING,
+            unique: true,
             allowNull: false
         },
         user_pass: {

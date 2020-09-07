@@ -1,3 +1,9 @@
+<div><a href="/new-plant">New Plant</a></div>
 <div>
-    my-plants.handlebars ... needs work
+  {{#each posts}}
+    <a href="/edit-plant/{{plant_id}}">
+      <span>{{identifier}}</span>
+      <span>{{format_date acquired_date}}</span>
+    </a>
+  {{/each}}
 </div>

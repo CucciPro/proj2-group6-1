@@ -3,7 +3,7 @@ const { My_Plants } = require("../models/");
 const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, (req, res) => {
-  console.log('==========================\nATTENTION: you have hit dashboard-routes.js line 6\n==========================');
+  console.log('='.repeat(50) + '\n dashboard-routes.js line 6 \n' + '='.repeat(50));
 
   My_Plants.findAll({
       where: {

@@ -1,23 +1,82 @@
 const router = require("express").Router();
 const { User, My_Plants, Plant_Species, Plant_History } = require("../models/");
+const withAuth = require("../utils/auth");
 
-// homepage that loads when a user is NOT logged in
+// user not logged in - display homepage
 router.get("/", (req, res) => {
     console.log('ATTENTION : you have hit home-routes.js basic get router');
-    //todo - everything that should load on the home route
-    res.render("index");
+    // if user not logged in render index
+    if (!req.session.userId) {
+        res.render("index");
+    } 
+    // if user logged in render my-plants
+    else {
+        res.render("my-plants");
+    }
 });
 
+// user logged in - display dashboard with list of my plants
+router.get("/dashboard", withAuth, (req, res) => {
+    console.log('='.repeat(50) + '\n home-routes.js /dashboard line 13 \n' + '='.repeat(50));
+  
+    My_Plants.findAll({
+        where: {
+          user_id: req.session.userId
+        }
+      })
+        .then(dbPostData => {
+          const posts = dbPostData.map((post) => post.get({ plain: true }));
+          
+          res.render("my-plants", {
+            layout: "main",
+            posts
+          });
+        })
+        .catch(err => {
+          console.log(err);
+          res.redirect("login");
+        });
+      
+});
+
+
+router.get("/new-plant", withAuth, (req, res) => {
+    res.render("new-plant", {
+        layout: "main"
+    });
+});
+
+router.get("/edit-plant/:id", withAuth, (req, res) => {
+    My_Plants.findByPk(req.params.id)
+    .then(dbPostData => {
+    if (dbPostData) {
+        const post = dbPostData.get({ plain: true });
+        
+        res.render("edit-plant", {
+            layout: "main",
+            post
+        });
+    } else {
+        res.status(404).end();
+    }
+    })
+    .catch(err => {
+        res.status(500).json(err);
+    });
+});
+
+// user not logged in - login screen
 router.get("/login", (req, res) => {
     console.log('==========================\nATTENTION: you have hit home-routes.js line 12\n==========================');
     if (req.session.loggedIn) {
-        res.redirect("/");
+        res.redirect("/dashboard");
         return;
     }
 
     res.render("login");
 });
 
+// user not logged in - join screen
 router.get("/join", (req, res) => {
     if (req.session.loggedIn) {
         res.redirect("/dashboard");

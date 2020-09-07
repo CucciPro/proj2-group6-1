@@ -4,6 +4,7 @@ const withAuth = require("../utils/auth");
 
 // user not logged in - display homepage
 router.get("/", (req, res) => {
+<<<<<<< HEAD
     console.log('='.repeat(50) + '\n home-routes.js : / : line 7 \n' + '='.repeat(50));
     // if user not logged in render index
     if (!req.session.userId) {
@@ -37,6 +38,11 @@ router.get("/dashboard", withAuth, (req, res) => {
           res.redirect("login");
         });
       
+=======
+    console.log('='.repeat(50) + '\n home-routes.js basic get router \n' + '='.repeat(50));
+    //todo - everything that should load on the home route
+    res.render("index");
+>>>>>>> 2ff0a2195187cfb77e960a8194eb97ba9059d7c4
 });
 
 
@@ -68,7 +74,11 @@ router.get("/edit-plant/:id", withAuth, (req, res) => {
 
 // user not logged in - login screen
 router.get("/login", (req, res) => {
+<<<<<<< HEAD
     //console.log('='.repeat(50) + '\n home-routes.js : line 69 \n' + '='.repeat(50));
+=======
+    console.log('='.repeat(50) + '\n home-routes.js /login line 12 \n' + '='.repeat(50));
+>>>>>>> 2ff0a2195187cfb77e960a8194eb97ba9059d7c4
     if (req.session.loggedIn) {
         //console.log('='.repeat(50) + '\n home-routes.js : line 72 \n' + '='.repeat(50));
         res.redirect("/dashboard");
@@ -80,8 +90,9 @@ router.get("/login", (req, res) => {
 
 // user not logged in - join screen
 router.get("/join", (req, res) => {
+    console.log('='.repeat(50) + '\n home-routes.js /join line 22 \n' + '='.repeat(50));
     if (req.session.loggedIn) {
-        res.redirect("/dashboard");
+        res.redirect("/");
         return;
     }
 

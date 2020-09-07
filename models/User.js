@@ -35,14 +35,14 @@ User.init(
     },
     {
         hooks: {
-        async beforeCreate(newUserData) {
-            newUserData.user_pass = await bcrypt.hash(newUserData.user_pass, 10);
-            return newUserData;
-        },
-        async beforeUpdate(updatedUserData) {
-            updatedUserData.user_pass = await bcrypt.hash(updatedUserData.user_pass, 10);
-            return updatedUserData;
-        }
+            async beforeCreate(newUserData) {
+                newUserData.user_pass = await bcrypt.hash(newUserData.user_pass, 10);
+                return newUserData;
+            },
+            async beforeUpdate(updatedUserData) {
+                updatedUserData.user_pass = await bcrypt.hash(updatedUserData.user_pass, 10);
+                return updatedUserData;
+            }
         },
         sequelize,
         timestamps: false,

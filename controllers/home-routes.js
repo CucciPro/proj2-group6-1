@@ -7,11 +7,13 @@ router.get("/", (req, res) => {
     console.log('='.repeat(50) + '\n home-routes.js : / : line 7 \n' + '='.repeat(50));
     // if user not logged in render index
     if (!req.session.userId) {
-        res.render("index");
+        //res.render("index");
+        res.redirect('/login');
     } 
     // if user logged in render my-plants
     else {
-        res.render("my-plants");
+        //res.render("my-plants");
+        res.redirect('/dashboard');
     }
 });
 
@@ -23,19 +25,19 @@ router.get("/dashboard", withAuth, (req, res) => {
         where: {
           user_id: req.session.userId
         }
-      })
-        .then(dbPostData => {
-          const posts = dbPostData.map((post) => post.get({ plain: true }));
-          
-          res.render("my-plants", {
-            layout: "main",
-            posts
-          });
-        })
-        .catch(err => {
-          console.log(err);
-          res.redirect("login");
+    })
+    .then(dbPostData => {
+        const posts = dbPostData.map((post) => post.get({ plain: true }));
+        
+        res.render("my-plants", {
+        layout: "main",
+        posts
         });
+    })
+    .catch(err => {
+        console.log(err);
+        res.redirect("login");
+    });
       
 });
 
@@ -62,7 +64,59 @@ router.get("/edit-plant/:id", withAuth, (req, res) => {
         }
     })
     .catch(err => {
-        res.status(500).json(err);
+        //res.status(500).json(err);
+        console.log(err);
+        res.redirect("login");
+    });
+});
+
+router.get("/species", withAuth, (req, res) => {
+    console.log('='.repeat(50) + '\n home-routes.js : /species : line 70 \n' + '='.repeat(50));
+  
+    Plant_Species.findAll({
+        attributes: ['species_id', 'common_name', 'botanical_name'],
+        order: [
+            ['common_name', 'ASC'],
+        ]
+    })
+    .then(dbPostData => {
+     const posts = dbPostData.map((post) => post.get({ plain: true }));
+      res.render("species", {
+        layout: "main",
+        posts
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect("login");
+    });
+});
+
+router.get("/new-species", withAuth, (req, res) => {
+    res.render("new-species", {
+        layout: "main"
+    });
+});
+
+router.get("/edit-species/:id", withAuth, (req, res) => {
+    console.log('='.repeat(50) + '\n home-routes.js : /edit-species/id : line 102 \n' + '='.repeat(50));
+    Plant_Species.findByPk(req.params.id)
+    .then(dbPostData => {
+        if (dbPostData) {
+            const post = dbPostData.get({ plain: true });
+            
+            res.render("edit-species", {
+                layout: "main",
+                post
+            });
+        } else {
+            res.status(404).end();
+        }
+    })
+    .catch(err => {
+        //res.status(500).json(err);
+        console.log(err);
+        res.redirect("login");
     });
 });
 

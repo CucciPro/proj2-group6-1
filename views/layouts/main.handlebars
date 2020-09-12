@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project Name TBD</title>
-        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/stylesheets/style.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers 'N Stuff</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"
+        integrity="sha512-ADrqa2PY1TZtb/MoLZIZu/Z/LlPaWQeDMBV73EMwjGam43/JJ5fqW38Rq8LJOVGCDfrJeOMS3Q/wRUVzW5DkjQ=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
 
-    <body>
+<body>
 
-        <nav>
-            <div>
-                <h1><a href="/">Project Name TBD</a></h1>
+    <nav>
+        <div class="header">
+            <h1><a href="#default" class="logo"><img class="image is-64x64" src="/assets/images/logo.jpg"
+                        alt="wreath"></a>
+            </h1>
+            <h1><a href="/">Lilly of the Willows</a></h1>
+            <div class="header-right">
+                <a class="active" href="/">Login</a>
+                <a href="/join">Join</a>
             </div>
-            <div>
-                <ul>
-                    <li id="navLogin" style="display:none;"><a href="/login">Login</a></li>
-                    <li id="navJoin" style="display:none;"><a href="/join">Join</a></li>
-                    <li id="navDashboard" style="display:none;"><a href="/dashboard">Dashboard</a></li>
-                    <li id="navSpecies" style="display:none;"><a href="/species">Species</a></li>
-                    <li id="navLogout" style="display:none;"><a href="#" id="logout-link">Logout</a></li>
-                </ul>
-            </div>
-        </nav>
+        </div>
+        <div>
+            <ul>
+                <li id="navLogin" style="display:none;"><a href="/login">Login</a></li>
+                <li id="navJoin" style="display:none;"><a href="/join">Join</a></li>
+                <li id="navDashboard" style="display:none;"><a href="/dashboard">Dashboard</a></li>
+                <li id="navSpecies" style="display:none;"><a href="/species">Species</a></li>
+                <li id="navLogout" style="display:none;"><a href="#" id="logout-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <header><!-- header image goes here --></header>
 
-        <main>
-            {{{body}}}
-        </main>
 
-        <footer>
-            <div>A Jasso, McClennan, Norman, Senneff Production</div>
-            <div>All Rights Reserved</div>
-        </footer>
+    <main class="">
+        <header class="image is-3by1">
+            <!-- header image goes here -->
+            <img class="media-left" src="/assets/images/homepage.jpg" alt="happy little flower">
 
-    </body>
+        </header>
+
+        <section class="">{{{body}}}</section>
+
+        <section class="">
+            <h2>Welcome to our gardening app!</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci in modi. Repellendus inventore,
+                labore aperiam voluptates voluptate fugit veritatis magni dicta blanditiis ea, ullam nisi reprehenderit.
+                Omnis, quaerat ratione!</p>
+        </section>
+
+    </main>
+
+    <footer class="header">
+        <div class="header-left">
+            <h4>A Jasso, McClellan, Norman, Senneff Production</h4>
+        </div>
+        <div class="header-right">
+            <h4>All Rights Reserved</h4>
+        </div>
+    </footer>
+
+</body>
 
 </html>
 <script src="/javascript/navigation.js"></script>

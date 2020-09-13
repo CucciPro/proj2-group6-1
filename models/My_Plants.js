@@ -26,6 +26,10 @@ My_Plants.init(
           len: [100]
       }
     },
+    image_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
     acquired_date: DataTypes.DATE,
     acquired_source: DataTypes.STRING,
     acquired_origin: DataTypes.STRING,

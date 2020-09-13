@@ -4,18 +4,15 @@ const My_Plants = require('./My_Plants');
 const Plant_History = require('./Plant_History');
 
 My_Plants.belongsTo(User, {
-  foreignKey: 'userId',
-  onDelete: 'CASCADE'
+  foreignKey: 'userId'
 });
 
 My_Plants.hasMany(Plant_History, {
-  foreignKey: 'plantId',
-  onDelete: 'CASCADE'
+  foreignKey: 'plantId'
 });
 
 Plant_History.belongsTo(My_Plants, {
-  foreignKey: 'plantId',
-  onDelete: 'CASCADE'
+  foreignKey: 'plantId'
 });
 
 module.exports = {

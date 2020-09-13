@@ -1,3 +1,59 @@
-<div>
-    PLACEHOLDER : new-plant ... needs work
-</div>
+<html>
+    <head>
+        ...
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/file-upload-with-preview@4.0.2/dist/file-upload-with-preview.min.css">
+ 
+        <!-- You'll want to make sure to at least set a width on the -->
+        <!-- .custom-file-container class... -->
+        ...
+    </head>
+    <body>
+ 
+        ...
+ 
+        <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+            <label>Upload File <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">&times;</a></label>
+            <label class="custom-file-container__custom-file" >
+                <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*" multiple aria-label="Choose File">
+                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                <span class="custom-file-container__custom-file__custom-file-control"></span>
+            </label>
+            <div class="custom-file-container__image-preview"></div>
+        </div>
+ 
+        ...
+ 
+        <script src="https://unpkg.com/file-upload-with-preview@4.0.2/dist/file-upload-with-preview.min.js"></script> 
+ 
+        <script>
+            const FileUploadWithPreview = require('file-upload-with-preview')
+            var upload = new FileUploadWithPreview('myUniqueUploadId', {
+                showDeleteButtonOnImages: true,
+                text: {
+                    chooseFile: 'Custom Placeholder Copy',
+                    browse: 'Custom Button Copy',
+                    selectedCount: 'Custom Files Selected Copy',
+                },
+                images: {
+                    baseImage: importedBaseImage,
+                },
+                presetFiles: [
+                    '../public/logo-promosis.png',
+                    'https://images.unsplash.com/photo-1557090495-fc9312e77b28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
+                ],
+                window.addEventListener('fileUploadWithPreview:imagesAdded', function(e) {
+    // e.detail.uploadId
+    // e.detail.cachedFileArray
+    // e.detail.addedFilesCount
+    // Use e.detail.uploadId to match up to your specific input
+    upload.cachedFileArray
+    if (e.detail.uploadId === 'mySecondImage') {
+        console.log(e.detail.cachedFileArray)
+        console.log(e.detail.addedFilesCount)
+    }
+})
+            })
+        </script> 
+ 
+    </body>
+</html>

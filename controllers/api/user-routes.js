@@ -7,7 +7,8 @@ router.post("/", (req, res) => {
   User.create({
     user_name: req.body.user_name,
     user_email: req.body.user_email,
-    user_pass: req.body.password
+    user_pass: req.body.password,
+    
   }).then(dbUserData => {
       console.log(dbUserData);
       req.session.save(() => {

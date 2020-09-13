@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const { User, My_Plants, Plant_Species, Plant_History } = require("../models/");
 const withAuth = require("../utils/auth");
+const multer = require('multer');
+const fileUpload = require("express-fileupload");
+const upload = multer({dest: 'uploads/'});
 
 // user not logged in - display homepage
 router.get("/", (req, res) => {
@@ -15,30 +18,28 @@ router.get("/", (req, res) => {
     }
 });
 
-// user logged in - display dashboard with list of my plants
-router.get("/dashboard", withAuth, (req, res) => {
+
+      
+
+router.get("/dashboard", upload.single('gardenImage'), withAuth, (req, res) => {
     console.log('='.repeat(50) + '\n home-routes.js : /dashboard : line 20 \n' + '='.repeat(50));
-  
     My_Plants.findAll({
         where: {
           user_id: req.session.userId
         }
-      })
-        .then(dbPostData => {
-          const posts = dbPostData.map((post) => post.get({ plain: true }));
-          
-          res.render("my-plants", {
-            layout: "main",
-            posts
-          });
-        })
-        .catch(err => {
-          console.log(err);
-          res.redirect("login");
+    })
+    .then(dbPostData => {
+        const posts = dbPostData.map((post) => post.get({ plain: true }));
+        res.render("new-plant", {
+        layout: "main",
+        posts
         });
-      
+    })
+    .catch(err => {
+        console.log(err);
+        res.redirect("login");
+    });
 });
-
 
 router.get("/new-plant", withAuth, (req, res) => {
     res.render("new-plant", {

@@ -4,15 +4,15 @@ const My_Plants = require('./My_Plants');
 const Plant_History = require('./Plant_History');
 
 My_Plants.belongsTo(User, {
-  foreignKey: 'userId'
+  foreignKey: 'user_id'
 });
 
 My_Plants.hasMany(Plant_History, {
-  foreignKey: 'plantId'
+  foreignKey: 'plant_id'
 });
 
 Plant_History.belongsTo(My_Plants, {
-  foreignKey: 'plantId'
+  foreignKey: 'plant_id'
 });
 
 module.exports = {

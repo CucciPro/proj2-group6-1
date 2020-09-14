@@ -1,9 +1,3 @@
-// window.Handlebars.registerHelper('select', function( value, options ){
-//     var $el = $('<select />').html( options.fn(this) );
-//     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
-//     return $el.html();
-// });
-
 const editFormHandler = async function(event) {
     event.preventDefault();
 
@@ -40,6 +34,7 @@ const editFormHandler = async function(event) {
 
     //this errors but doesn't seem to be needed anyhow
     //document.location.replace("/edit-plant/${plant_id}");
+    alert("The plant has been successfully updated!");
 };
 
 document.querySelector("#edit-plant-form").addEventListener("submit", editFormHandler);

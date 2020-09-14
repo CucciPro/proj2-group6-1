@@ -1,4 +1,4 @@
-const { Species } = require('../models');
+const { Plant_Species } = require('../models');
 
 const speciesData = [
   {
@@ -37,6 +37,6 @@ const speciesData = [
   },
 ];
 
-const seedSpecies = () => Species.bulkCreate(speciesData);
+const seedSpecies = () => Plant_Species.bulkCreate(speciesData);
 
 module.exports = seedSpecies;

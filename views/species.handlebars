@@ -1,0 +1,9 @@
+<div><a href="/new-species">New Species</a></div>
+<div>
+  {{#each posts}}
+    <a href="/edit-species/{{species_id}}">
+      <span>{{common_name}}</span>
+      <span>{{botanical_name}}</span>
+    </a>
+  {{/each}}
+</div>

@@ -1,17 +1,15 @@
 const User = require('./User');
-const Species = require('./Plant_Species');
+const Plant_Species = require('./Plant_Species');
 const My_Plants = require('./My_Plants');
 const Plant_History = require('./Plant_History');
 const Image = require('./Image')
 
 My_Plants.belongsTo(User, {
-  foreignKey: 'userId',
-  onDelete: 'CASCADE'
+  foreignKey: 'user_id'
 });
 
 My_Plants.hasMany(Plant_History, {
-  foreignKey: 'plantId',
-  onDelete: 'CASCADE'
+  foreignKey: 'plant_id'
 });
 My_Plants.hasMany(Image, {
   foreignKey: 'plant_id',
@@ -19,13 +17,12 @@ My_Plants.hasMany(Image, {
 });
 
 Plant_History.belongsTo(My_Plants, {
-  foreignKey: 'plantId',
-  onDelete: 'CASCADE'
+  foreignKey: 'plant_id'
 });
 
 module.exports = {
   User,
-  Species,
+  Plant_Species,
   My_Plants,
   Plant_History,
   Image

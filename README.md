@@ -40,7 +40,12 @@ The walkthrough demonstrates the following :
 1. Install packages : npm install express express-session sequelize mysql2 express-handlebars connect-session-sequelize dotenv bcrypt
 1. If you don't have nodemon installed globally already, do that now.  If you do, skip this step : npm install -g nodemon
 1. Install nodemon as dev dependency for this repo (if not installed globally you will encounter an error, install globally first [command found in step above]) : npm install --save-dev nodemon
-1. Create a .env file in the root directory and add values for DB_NAME, DB_USER, and DB_PW
+1. Create a .env file in the root directory and add values for DB_NAME, DB_USER, and DB_PW, like so :
+    
+    DB_NAME='proj2_group6_db'
+    DB_USER='root'
+    DB_PW='<your mysql password goes here>'
+
 1. Start mysql (this step is where the walkthrough video starts) : mysql -u root -p
 1. If prompted for a password, enter the password for your mysql db
 1. Set up db : source db/schema.sql;

@@ -1,0 +1,41 @@
+
+html {
+    background-color : #175240;
+}
+
+.hero-body {
+    padding: 0px;
+}
+
+.hero-body .container {
+    margin: 0px;
+}
+
+.navbar-brand {
+    font-size: 20px;
+}
+
+.navbar, .footer {
+    background-color : #175240;
+    
+}
+.navbar-end a, .navbar-brand a {
+    margin-top: 5px;
+    color: white;
+}
+
+.navbar-item{
+    display:none;
+}
+
+.navbar-burger {
+    color: white;
+}
+
+.hero-body {
+    background-color: white;
+}
+
+.soc a i, .footerText {
+    color: white;
+}

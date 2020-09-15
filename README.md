@@ -44,7 +44,9 @@ The walkthrough demonstrates the following :
 1. Create a .env file in the root directory and add values for DB_NAME, DB_USER, and DB_PW, like so :
     
     DB_NAME='proj2_group6_db'
+
     DB_USER='root'
+    
     DB_PW='<your mysql password goes here>'
 
 1. Start mysql (this step is where the walkthrough video starts) : mysql -u root -p

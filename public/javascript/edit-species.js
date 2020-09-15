@@ -1,9 +1,9 @@
 const newFormHandler = async function(event) {
     event.preventDefault();
 
-    const common_name = document.querySelector('select[name="species_common"]').value;
+    const common_name = document.querySelector('input[name="species_common"]').value;
     const botanical_name = document.querySelector('input[name="species_botanical"]').value;
-    const plant_type = document.querySelector('input[name="species_type"]').value;
+    const plant_type = document.querySelector('select[name="species_type"]').value;
     const hardiness_zones = document.querySelector('input[name="species_hardiness"]').value;
     const sun_tolerance = document.querySelector('input[name="species_tolerance"]').value;
     const drainage = document.querySelector('input[name="species_drainage"]').value;

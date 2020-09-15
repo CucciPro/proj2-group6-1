@@ -89,7 +89,7 @@ router.get("/edit-species/:id", withAuth, (req, res) => {
 });
 
 //put callback to update content.
-router.put("/edit-plant/", withAuth, (req, res) => {
+router.put("/edit-species/", withAuth, (req, res) => {
     Plant_Species.update(req.body, {
         where: {
             species_id: req.body.species_id

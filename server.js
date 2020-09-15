@@ -3,6 +3,9 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 
+var multer  = require('multer')
+var upload = multer()
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -37,6 +40,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(require('./controllers/'));
+
+//trying to get multer to work at some point
+// app.post('/profile', upload.single(), functinpmon (req, res, next) {
+//   // req.body contains the text fields
+//   req.body;
+// })
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('='.repeat(50) + '\n Now listening at localhost:3001 \n' + '='.repeat(50)));

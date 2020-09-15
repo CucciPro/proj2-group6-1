@@ -11,7 +11,7 @@ Image.init(
           autoIncrement: true
     },
       image_file: {
-        type: DataTypes.BLOB,
+        type: DataTypes.BLOB('long'),
         allowNull:false,
 
       },

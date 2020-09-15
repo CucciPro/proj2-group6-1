@@ -9,8 +9,11 @@ router.get('/', (req,res) => {
 
 );
 
-router.post("/", (req, res) => {
-    console.log(req.files);
+router.post("/api/images", (req, res) => {
+    console.log('hey there this matt' , req.file)
+    if (!req.body) {
+      return
+    }
     Image.create({
       image_file: req.body.fileName,
       

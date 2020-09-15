@@ -1,86 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weed It & Reap</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-        <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weed It & Reap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
 
-    <body>
-        <!-- START NAV -->
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/dashboard" style="display:block;">
-                        {{!-- <img src="https://cdn.emk.dev/templates/bulma-logo-light.png" alt="Logo"> --}}
-                        Weed It & Reap
-                    </a>
-                    <span class="navbar-burger burger" data-target="navbarMenu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </div>
-                <div id="navbarMenu" class="navbar-menu">
-                    <div class="navbar-end">
-                        <div class="tabs is-right">
-                                <ul>
-                                    <li><a href="/login" id="navLogin" class="navbar-item">Login</a></li>
-                                    <li><a href="/join" id="navJoin" class="navbar-item">Join</a></li>
-                                    <li><a href="/dashboard" id="navDashboard" class="navbar-item">Dashboard</a></li>
-                                    <li><a href="/species" id="navSpecies" class="navbar-item">Species</a></li>
-                                    <li><a href="#" id="navLogout" class="navbar-item">Logout</a></li>
-                                </ul>
-                        </div>
-                    </div>
-                </div>
+<body>
+    <!-- START NAV -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/dashboard" style="display:block;">
+                    {{!-- <img src="https://cdn.emk.dev/templates/bulma-logo-light.png" alt="Logo"> --}}
+                    Weed It & Reap
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
             </div>
-        </nav>
-        <!-- END NAV -->
-
-        <!-- START MAIN CONTAINTER -->
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="columns is-vcentered">
-                    <div class="column is-5">
-                        <figure class="image is-4by3">
-                            <img src="/assets/images/hero.jpg" alt="Description">
-                        </figure>
-                    </div>
-                    {{!-- <div class="column is-6 is-offset-1"> --}}
-                    <div class="column is-6">
-                        {{{body}}}
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="tabs is-right">
+                        <ul>
+                            <li><a href="/login" id="navLogin" class="navbar-item">Login</a></li>
+                            <li><a href="/join" id="navJoin" class="navbar-item">Join</a></li>
+                            <li><a href="/dashboard" id="navDashboard" class="navbar-item">Dashboard</a></li>
+                            <li><a href="/species" id="navSpecies" class="navbar-item">Species</a></li>
+                            <li><a href="#" id="navLogout" class="navbar-item">Logout</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- END MAIN CONTAINTER -->
-        
-        <!-- START FOOTER -->
-        <footer class="footer">
-            <div class="container">
-                <div class="content has-text-centered">
-                    {{!-- if we had social these links would work --}}
-                    <div class="soc">
-                        <a href="#"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
-                    </div>
-                    <p class="footerText">
-                        A Jasso, McClennan, Norman, Senneff Production<br />
-                        All Rights Reserved
-                    </p>
+    </nav>
+    <!-- END NAV -->
+
+    <!-- START MAIN CONTAINTER -->
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="columns is-vcentered">
+                <div class="column is-5">
+                    <figure class="image is-4by3">
+                        <img src="/assets/images/hero.jpg" alt="Description">
+                    </figure>
+                </div>
+                {{!-- <div class="column is-6 is-offset-1"> --}}
+                <div class="column is-6">
+                    {{{body}}}
                 </div>
             </div>
-        </footer>
-        <!-- END FOOTER -->
-    </body>
+        </div>
+    </div>
+    <!-- END MAIN CONTAINTER -->
+
+    <!-- START FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                {{!-- if we had social these links would work --}}
+                <div class="soc">
+                    <a href="#"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+                </div>
+                <p class="footerText">
+                    A Jasso, McClellan, Norman, Senneff Production<br />
+                    All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+</body>
 
 </html>
 <script src="/javascript/navigation.js"></script>

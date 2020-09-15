@@ -1,41 +1,54 @@
-
 html {
-    background-color : #175240;
+  background-color: #175240;
 }
 
 .hero-body {
-    padding: 0px;
+  padding: 0px;
 }
 
 .hero-body .container {
-    margin: 0px;
+  margin: 0px;
 }
 
 .navbar-brand {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.navbar, .footer {
-    background-color : #175240;
-    
+.navbar,
+.footer {
+  background-color: #175240;
 }
-.navbar-end a, .navbar-brand a {
-    margin-top: 5px;
-    color: white;
+.navbar-end a,
+.navbar-brand a {
+  margin-top: 5px;
+  color: white;
 }
 
-.navbar-item{
-    display:none;
+.navbar-item {
+  display: none;
 }
 
 .navbar-burger {
-    color: white;
+  color: white;
 }
 
 .hero-body {
-    background-color: white;
+  background-color: white;
 }
 
-.soc a i, .footerText {
-    color: white;
+.soc a i,
+.footerText {
+  color: white;
+}
+
+@media (max-width: 1020px) {
+  body {
+    font-size: 1.5rem;
+  }
+  a.navbar-item {
+    font-size: 1.5rem;
+  }
+  .navbar-end a {
+    color: #175240;
+  }
 }

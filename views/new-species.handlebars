@@ -8,14 +8,13 @@
         <label class="form-label" for="species_botanical">Botanical Name</label>
         <input type="text" name="species_botanical" maxlength="100" required />
     </div>
-    {{!-- <div>
+    <div>
         <label class="form-label" for="species_type">Type</label>
         <select name="species_type">
-            {{#each speciesType}}
-                <option value="{{species_id}}">{{common_name}} - {{botanical_name}}</option>
+            {{#each newTypeList}}
+                <option value="{{type_id}}">{{type_name}}</option>
             {{/each}}
         </select>
-    </div>--}}
     <div>
         <label class="form-label" for="species_hardiness">What are the hardiness zones?</label>
         <input type="text" name="species_hardiness" maxlength="100" required />

@@ -20,8 +20,8 @@ Plant_Species.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    plant_type: {
-        type: DataTypes.STRING,
+    type_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
     },  
     hardiness_zones: DataTypes.STRING,

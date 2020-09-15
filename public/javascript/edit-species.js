@@ -19,8 +19,8 @@ const newFormHandler = async function(event) {
 
     const token = localStorage.getItem("token");
 
-    await fetch('/new-species', {
-        method: "POST",
+    await fetch('/edit-species', {
+        method: "PUT",
         body: JSON.stringify({
             common_name,
             botanical_name,
@@ -42,12 +42,9 @@ const newFormHandler = async function(event) {
             "Content-Type": "application/json",
             authorization: `Bearer ${token}`
         }
-    }).then(res => 
-        res.json()
-    ).then(
-            //once the plant is created redirect user to edit page for the new species_id
-            data => document.location.replace('http://localhost:3001/edit-species/' + data.species_id)
-      );
+    });
+
+    alert("The species has been successfully updated!");
 };
 
-document.querySelector("#new-species-form").addEventListener("submit", newFormHandler);
+document.querySelector("#edit-species-form").addEventListener("submit", editFormHandler);

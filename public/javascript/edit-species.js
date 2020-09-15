@@ -1,6 +1,7 @@
-const newFormHandler = async function(event) {
+const editSpeciesFormHandler = async function(event) {
     event.preventDefault();
 
+    const species_id = document.querySelector('input[name="species_id"]').value;
     const common_name = document.querySelector('input[name="species_common"]').value;
     const botanical_name = document.querySelector('input[name="species_botanical"]').value;
     const plant_type = document.querySelector('select[name="species_type"]').value;
@@ -22,6 +23,7 @@ const newFormHandler = async function(event) {
     await fetch('/edit-species', {
         method: "PUT",
         body: JSON.stringify({
+            species_id,
             common_name,
             botanical_name,
             plant_type,
@@ -47,4 +49,4 @@ const newFormHandler = async function(event) {
     alert("The species has been successfully updated!");
 };
 
-document.querySelector("#edit-species-form").addEventListener("submit", editFormHandler);
+document.querySelector("#edit-species-form").addEventListener("submit", editSpeciesFormHandler);

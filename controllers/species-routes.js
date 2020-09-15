@@ -68,8 +68,11 @@ router.get("/edit-species/:id", withAuth, (req, res) => {
     Plant_Species.findByPk(req.params.id)
     .then(async dbPostData => {
         if (dbPostData) {
+
+            //species data
             const post = dbPostData.get({ plain: true });
             
+            //type data
             const type = await getType();
             const editTypeList = type.map((typeItem) => typeItem.get({ plain: true }));
 
@@ -89,7 +92,7 @@ router.get("/edit-species/:id", withAuth, (req, res) => {
 });
 
 //put callback to update content.
-router.put("/edit-species/", withAuth, (req, res) => {
+router.put("/edit-species", withAuth, (req, res) => {
     Plant_Species.update(req.body, {
         where: {
             species_id: req.body.species_id

@@ -1,4 +1,4 @@
-const newFormHandler = async function(event) {
+const newSpeciesFormHandler = async function(event) {
     event.preventDefault();
 
     const common_name = document.querySelector('input[name="species_common"]').value;
@@ -50,4 +50,4 @@ const newFormHandler = async function(event) {
       );
 };
 
-document.querySelector("#new-species-form").addEventListener("submit", newFormHandler);
+document.querySelector("#new-species-form").addEventListener("submit", newSpeciesFormHandler);

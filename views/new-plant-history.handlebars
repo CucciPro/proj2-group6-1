@@ -1,6 +1,6 @@
-
 <form id="new-plant-history">
-    <input type="hidden" name="plant_id" value="{{plantData.plant_id}}" />
+    {{!-- <input type="hidden" name="plant_id" value="{{plantData.plant_id}}" /> --}}
+    <input type="hidden" name="plant_id" value="1" />
     <div>
         <label class="form-label" for="rec_type">Type</label>
         <input type="text" name="rec_type" autofocus maxlength="100" required />
@@ -12,19 +12,17 @@
     <div>
         <label class="form-label" for="in_ground">In ground?</label>
         <select name="in_ground">
-            
             <option value="1"> Yes </option>
             <option value="0"> No </option>
-            
         </select>
     </div>
     <div>
         <label class="form-label" for="direct_sunlight_hours">Sunlight Hours</label>
-        <input type="text" name="direct_sunlight_hours" maxlength="100" required />
+        <input type="number" name="direct_sunlight_hours" maxlength="100" required />
     </div>
     <div>
         <label class="form-label" for="watering_schedule">Watering Schedule</label>
-        <input type="number" name="watering_schedule" required />
+        <input type="text" name="watering_schedule" required />
     </div>
     <div>
         <label class="form-label" for="additional_info">Additional Info</label>
@@ -33,7 +31,5 @@
     <div>
         <button type="submit">Create</button>
     </div>
-
 </form>
-
 <script src="/javascript/new-plant-history.js"></script>

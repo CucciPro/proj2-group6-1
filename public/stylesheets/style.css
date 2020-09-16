@@ -54,11 +54,26 @@ html {
 #edit-plant-form,
 #new-plant-form {
   padding: 50px;
-  text-align: left;
+  text-align: right;
 }
 
 div.card {
   padding: 50px;
+}
+
+.plant-block {
+  position: relative;
+  margin: 10px;
+}
+
+.my-plants {
+  position: absolute;
+  top: 0;
+  padding-left: 10px;
+}
+
+.date {
+  position: absolute;
 }
 
 @media (max-width: 1020px) {

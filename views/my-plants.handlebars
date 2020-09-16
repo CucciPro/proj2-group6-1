@@ -2,11 +2,11 @@
 <div class="plant-base has-text-justified">
   {{#each posts}}
   <div class="plant-block">
-    <a class="plant-img" href="https://placeholder.com"><img src="https://via.placeholder.com/80?text=%2B"></a>
+    <a class="plant-img" href="https://placeholder.com"><img src="https://via.placeholder.com/110x70?text=%2B"></a>
     <a class="my-plants" href="/edit-plant/{{plant_id}}">
-      <span class="is-size-4">{{identifier}}</span>
-      <span>{{format_date_display acquired_date}}</span>
-      <span>{{acquired_source}}</span>
+      <span class="identifier is-size-4">{{identifier}}</span>
+      <span class="date">{{format_date_display acquired_date}}</span>
+      <span class="source">{{acquired_source}}</span>
     </a>
   </div>
 

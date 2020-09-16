@@ -51,6 +51,16 @@ html {
   margin: 20px;
 }
 
+#edit-plant-form,
+#new-plant-form {
+  padding: 50px;
+  text-align: left;
+}
+
+div.card {
+  padding: 50px;
+}
+
 @media (max-width: 1020px) {
   body {
     font-size: 1.5rem;
@@ -60,5 +70,13 @@ html {
   }
   .navbar-end a {
     color: #175240;
+  }
+  #edit-plant-form,
+  #new-plant-form {
+    padding-top: 10px;
+    text-align: center;
+  }
+  div.card {
+    padding: 5px;
   }
 }

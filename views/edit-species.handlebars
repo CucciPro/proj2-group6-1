@@ -1,3 +1,74 @@
 <div>
-    PLACEHOLDER : edit-species ... needs work
+    <form id="edit-species-form">
+    <input type="hidden" name="species_id" value="{{speciesData.species_id}}" />
+    <div>
+        <label class="form-label" for="species_common">Common Name</label>
+        <input type="text" name="species_common" value="{{speciesData.common_name}}" autofocus maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_botanical">Botanical Name</label>
+        <input type="text" name="species_botanical" value="{{speciesData.botanical_name}}" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="type_id">Type</label>
+        <select name="type_id">
+            {{#each editTypeList}}
+                <option value="{{type_id}}" {{#getSelectedValue type_id ../post.type_id}}{{/getSelectedValue}}>{{type_name}}</option>
+            {{/each}}
+        </select>
+    <div>
+        <label class="form-label" for="species_hardiness">What are the hardiness zones?</label>
+        <input type="text" name="species_hardiness" value="{{speciesData.hardiness_zones}}" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_tolerance">What is the sun tolerence?</label>
+        <input type="text" name="species_tolerance" value="{{speciesData.sun_tolerance}}" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_drainage">What type of drainage?</label>
+        <input type="text" name="species_drainage" value="{{speciesData.drainage}}" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_water">What is the water requirements?</label>
+        <input type="text" name="species_water" value="{{speciesData.water_requirements}}" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_feeding">What season to start feeding?</label>
+        <input type="text" name="species_feeding" value="{{speciesData.feeding_schedule}}" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_growth">What is the expected growth rate?</label>
+        <input type="text" name="species_growth" value="{{speciesData.growth_rate}}" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_width">Width of plant when mature (in inches)?</label>
+        <input type="number" name="species_width" value="{{speciesData.mature_width}}" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_height">Height of plant when mature (in inches)?</label>
+        <input type="number" name="species_height" value="{{speciesData.mature_height}}" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_spacing">Spacing of plant (in inches)?</label>
+        <input type="number" name="species_spacing" value="{{speciesData.spacing}}" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_depth">Depth of plant (in inches)?</label>
+        <input type="number" name="species_depth" value="{{speciesData.depth}}" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_planting">Season to plant?</label>
+        <input type="text" name="species_planting" value="{{speciesData.when_to_plant}}" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label" for="species_additional_info">Additional Info</label>
+        <textarea name="species_additional_info" maxlength="500" required>{{speciesData.additional_info}}</textarea>
+    </div>
+    <div>
+        <button type="submit">Update</button>
+    </div>
+
+</form>
+
+<script src="/javascript/edit-species.js"></script>
 </div>

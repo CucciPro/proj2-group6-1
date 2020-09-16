@@ -7,8 +7,8 @@ const plantRoutes = require('./plant-routes');
 const speciesRoutes = require('./species-routes');
 
 //use routes
-router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
+router.use('/', homeRoutes);
 router.use('/', plantRoutes);
 router.use('/', speciesRoutes);
 

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Plant_Species, Species_Type } = require("../models");
+const { User, My_Plants, Plant_Species, Plant_History, Species_Type } = require("../models");
 const withAuth = require("../utils/auth");
 
 //species landing page
@@ -28,7 +28,7 @@ router.get("/new-species", withAuth, (req, res) => {
     Species_Type.findAll({
         attributes: ['type_id', 'type_name'],
         order: [
-            ['type_name'],
+            ['type_name', 'ASC'],
         ]
     })
     .then(dbPostData => {
@@ -37,13 +37,19 @@ router.get("/new-species", withAuth, (req, res) => {
             layout: "main",
             newTypeList
         });
-    });
+    })
+    .catch(err => {
+        console.log(err);
+        res.redirect("login");
+      });
 });
 
 //post new species
-router.post("/new-species", withAuth, (req, res) => {
+router.post("/new-species/", withAuth, (req, res) => {
     const body = req.body;
-    Plant_Species.create({ ...body, user_id: req.session.userId })
+    console.log(body);
+    console.log(Plant_Species);
+    Plant_Species.create({ ...body })
     .then(newSpecies => {
         return res.json(newSpecies);
     })
@@ -57,14 +63,13 @@ function getType(){
     return Species_Type.findAll({
         attributes: ['type_id', 'type_name'],
         order: [
-            ['type_name'],
+            ['type_name', 'ASC'],
         ]
     })
 };
 
 //edit species get
 router.get("/edit-species/:id", withAuth, (req, res) => {
-    console.log('='.repeat(50) + '\n home-routes.js : /edit-species/id : line 122 \n' + '='.repeat(50));
     Plant_Species.findByPk(req.params.id)
     .then(async dbPostData => {
         if (dbPostData) {

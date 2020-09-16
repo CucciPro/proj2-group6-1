@@ -7,7 +7,7 @@ router.get("/species", withAuth, (req, res) => {
     Plant_Species.findAll({
         attributes: ['species_id', 'common_name', 'botanical_name', 'type_id'],
         order: [
-            ['common_name', 'ASC'],
+            ['common_name', 'DESC'],
         ]
     })
     .then(dbPostData => {
@@ -47,8 +47,6 @@ router.get("/new-species", withAuth, (req, res) => {
 //post new species
 router.post("/new-species/", withAuth, (req, res) => {
     const body = req.body;
-    console.log(body);
-    console.log(Plant_Species);
     Plant_Species.create({ ...body })
     .then(newSpecies => {
         return res.json(newSpecies);
@@ -63,7 +61,7 @@ function getType(){
     return Species_Type.findAll({
         attributes: ['type_id', 'type_name'],
         order: [
-            ['type_name', 'ASC'],
+            ['type_name', 'DESC'],
         ]
     })
 };

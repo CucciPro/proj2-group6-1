@@ -4,7 +4,7 @@ const editSpeciesFormHandler = async function(event) {
     const species_id = document.querySelector('input[name="species_id"]').value;
     const common_name = document.querySelector('input[name="species_common"]').value;
     const botanical_name = document.querySelector('input[name="species_botanical"]').value;
-    const plant_type = document.querySelector('select[name="species_type"]').value;
+    const type_id = document.querySelector('select[name="type_id"]').value;
     const hardiness_zones = document.querySelector('input[name="species_hardiness"]').value;
     const sun_tolerance = document.querySelector('input[name="species_tolerance"]').value;
     const drainage = document.querySelector('input[name="species_drainage"]').value;
@@ -26,7 +26,7 @@ const editSpeciesFormHandler = async function(event) {
             species_id,
             common_name,
             botanical_name,
-            plant_type,
+            type_id,
             hardiness_zones,
             sun_tolerance,
             drainage,

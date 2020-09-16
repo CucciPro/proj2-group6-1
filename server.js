@@ -29,7 +29,7 @@ const hbs = exphbs.create({
     format_date_display: date => {
       return `${('0' + (date.getUTCMonth() + 1)).slice(-2)}/${('0' + date.getUTCDate()).slice(-2)}/${date.getUTCFullYear()}`;
     },
-    getSelectedSpecies: (arg1,arg2) => {
+    getSelectedValue: (arg1,arg2) => {
       //console.log(arg1,arg2);
       return arg1 === arg2 ? 'selected' : false;
     }

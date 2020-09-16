@@ -69,19 +69,19 @@ function getType(){
 //edit species get
 router.get("/edit-species/:id", withAuth, (req, res) => {
     Plant_Species.findByPk(req.params.id)
-    .then(async dbPostData => {
-        if (dbPostData) {
+    .then(async dbSpeciesData => {
+        if (dbSpeciesData) {
 
             //species data
-            const post = dbPostData.get({ plain: true });
-            
+            const speciesData = dbSpeciesData.get({ plain: true });
+            console.log(speciesData);
             //type data
             const type = await getType();
             const editTypeList = type.map((typeItem) => typeItem.get({ plain: true }));
 
             res.render("edit-species", {
                 layout: "main",
-                post,
+                speciesData,
                 editTypeList
             });
         } else {

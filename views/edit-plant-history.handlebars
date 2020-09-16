@@ -1,0 +1,43 @@
+
+<form id="edit-plant-history">
+    <input type="hidden" name="plant_history_id" value="{{plantData.history_id}}" />
+    <div>
+        <label class="form-label" for="rec_type">Type</label>
+        <input type="text" name="rec_type" autofocus maxlength="100" value="{{plantData.rec_type}}" required />
+    </div>
+    <div>
+        <label class="form-label" for="loc">Location</label>
+        <input type="text" name="loc" value="{{plantData.loc}}"required/>
+    </div>
+    <div>
+        <label class="form-label" for="in_ground">In ground?</label>
+        <select name="in_ground">
+            
+            <option value="1" {{#getSelectedSpecies 1 ../plantData.in_ground}}> Yes </option>
+            <option value="0" {{#getSelectedSpecies 0 ../plantData.in_ground}}> No </option>
+
+            
+        
+            {{!-- What do I actually need to make this work it is hard coded --}}
+            
+        </select>
+    </div>
+    <div>
+        <label class="form-label" for="direct_sunlight_hours">Sunlight Hours</label>
+        <input type="text" name="direct_sunlight_hours" maxlength="100" value="{{plantData.direct_sunlight_hours}}" required />
+    </div>
+    <div>
+        <label class="form-label" for="watering_schedule">Watering Schedule</label>
+        <input type="number" name="watering_schedule" value="{{plantData.watering_schedule}}" required />
+    </div>
+    <div>
+        <label class="form-label" for="additional_info">Additional Info</label>
+        <textarea name="additional_info" maxlength="500" required>{{plantData.additional_info}}</textarea>
+    </div>
+    <div>
+        <button type="submit">Create</button>
+    </div>
+
+</form>
+
+<script src="/javascript/edit-plant-history.js"></script>

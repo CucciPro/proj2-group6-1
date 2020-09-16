@@ -189,6 +189,93 @@ router.get("/edit-species/:id", withAuth, (req, res) => {
     });
 });
 
+router.get("/new-plant-history", withAuth, (req, res) => {  
+    Plant_Species.findAll({
+        attributes: ['species_id', 'common_name', 'botanical_name'],
+        order: [
+            ['common_name', 'ASC'],
+        ]
+    })
+    .then(dbSpeciesData => {
+     const speciesItems = dbSpeciesData.map((speciesItem) => speciesItem.get({ plain: true }));
+      res.render("new-plant-history", {
+        layout: "main",
+        speciesItems
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect("login");
+    });
+});
+
+router.post("/new-plant-history", withAuth, (req, res) => {
+    const body = req.body;
+    Plant_History.create({ ...body, user_id: req.session.userId })
+    .then(newPlantHistory => {
+        
+        return res.json(newPlantHistory);
+    })
+    .catch(err => {
+        res.status(500).json(err);
+    });
+});
+
+// edit-plant GET : populate form with plant data
+router.get("/edit-plant-history/:id", withAuth, (req, res) => {
+    Plant_History.findByPk(req.params.id)
+    .then(async dbPlantData => {
+        if (dbPlantData) {
+            
+            //this is for all the data related to the plant itself
+            const plantData = dbPlantData.get({ plain: true });
+
+            //if user is authorized to view plant (only if they created it) render the template
+            if (req.session.userId === plantData.user_id){
+                res.render("edit-plant-history", {
+                    layout: "main",
+                    plantData,
+                });
+            } 
+            //if user is not authorized to view plant (they did not create it) redirect back to dashboard
+            else {
+                //could be nice to provide user with message that they aren't authorized to access this plant record but communicating that back to the user is not essential because users shouldn't try to be sneaky and load an unauthorized plant record
+                res.redirect("/dashboard");
+            }
+            
+        } else {
+            res.status(404).end();
+        }
+    })
+    .catch(err => {
+        //res.status(500).json(err);
+        console.log(err);
+        res.redirect("../login");
+    });
+});
+
+// edit plant - PUT - update
+router.put("/edit-plant-history/", withAuth, (req, res) => {
+    //console.log('='.repeat(50) + '\n home-routes.js : /edit-plant POST : line 95 \n' + '='.repeat(50));
+    //console.log(req.body);
+    //this_plant_id = req.body.plant_id;
+    Plant_History.update(req.body, {
+        where: {
+            history_id: req.body.history_id
+        }
+    })
+    .then(affectedRows => {
+        if (affectedRows > 0) {
+            res.status(200).end();
+        } else {
+            res.status(404).end();
+        }
+    })
+    .catch(err => {
+        res.status(500).json(err);
+    });
+});
+
 // user not logged in - login screen
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {

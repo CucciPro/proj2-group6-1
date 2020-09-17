@@ -9,6 +9,7 @@ This project demonstrates the use of the following packages :
 - <a href="https://www.npmjs.com/package/mysql2" target="_blank">mysql12</a>
 - <a href="https://www.npmjs.com/package/dotenv" target="_blank">dotenv</a>
 - <a href="https://www.npmjs.com/package/bcrypt" target="_blank">bycrypt</a>
+- <a href="https://bulma.io/" target="_blank">bulma</a>
 
 
 ## Video Walkthrough - TBD
@@ -37,13 +38,15 @@ The walkthrough demonstrates the following :
 1. Clone repo : git clone <this_repo>
 1. Change directory into the repo directory created from the clone command : cd <repo_directory>
 1. Initialize npm : npm init -y
-1. Install packages : npm install express express-session sequelize mysql2 express-handlebars connect-session-sequelize dotenv bcrypt
+1. Install packages : npm install express express-session sequelize mysql2 express-handlebars connect-session-sequelize dotenv bcrypt bulma
 1. If you don't have nodemon installed globally already, do that now.  If you do, skip this step : npm install -g nodemon
 1. Install nodemon as dev dependency for this repo (if not installed globally you will encounter an error, install globally first [command found in step above]) : npm install --save-dev nodemon
 1. Create a .env file in the root directory and add values for DB_NAME, DB_USER, and DB_PW, like so :
     
     DB_NAME='proj2_group6_db'
+
     DB_USER='root'
+    
     DB_PW='<your mysql password goes here>'
 
 1. Start mysql (this step is where the walkthrough video starts) : mysql -u root -p

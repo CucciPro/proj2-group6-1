@@ -1,45 +1,60 @@
+<h1 class="column title">Edit Plant</h1>
 <form id="edit-plant-form">
     <input type="hidden" name="plant_id" value="{{plantData.plant_id}}" />
     <div>
-        <label class="form-label" for="plant_identifier">Short name for your plant (100 chars)</label>
-        <input type="text" name="plant_identifier" value="{{plantData.identifier}}" autofocus maxlength="100" required />
+        <label class="form-label tag is-info is-light is-medium" for="plant_identifier">Short name for your plant (100
+            chars)</label>
+        <input type="text" name="plant_identifier" value="{{plantData.identifier}}" autofocus maxlength="100"
+            required />
     </div>
     <div>
-        <label class="form-label" for="plant_species_id">Species</label>
+        <label class="form-label tag is-info is-light is-medium" for="plant_species_id">Species</label>
         <select name="plant_species_id">
             {{#each speciesList}}
-                <option value="{{species_id}}" {{#getSelectedValue species_id ../plantData.species_id}}{{/getSelectedValue}}>{{common_name}} - {{botanical_name}}</option>
+            <option value="{{species_id}}"
+                {{#getSelectedValue species_id ../plantData.species_id}}{{/getSelectedValue}}>{{common_name}} -
+                {{botanical_name}}</option>
             {{/each}}
         </select>
     </div>
     <div>
-        <label class="form-label" for="plant_acquired_date">Acquired Date</label>
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_date">Acquired Date</label>
         <input type="date" name="plant_acquired_date" required value="{{format_date_input plantData.acquired_date}}" />
     </div>
     <div>
-        <label class="form-label" for="plant_acquired_source">Acquired Source</label>
-        <input type="text" name="plant_acquired_source" value="{{plantData.acquired_source}}" maxlength="100" required />
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_source">Acquired Source</label>
+        <input type="text" name="plant_acquired_source" value="{{plantData.acquired_source}}" maxlength="100"
+            required />
     </div>
     <div>
-        <label class="form-label" for="plant_acquired_origin">Acquired Origin</label>
-        <input type="text" name="plant_acquired_origin" value="{{plantData.acquired_origin}}" maxlength="100" required />
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_origin">Acquired Origin</label>
+        <input type="text" name="plant_acquired_origin" value="{{plantData.acquired_origin}}" maxlength="100"
+            required />
     </div>
     <div>
-        <label class="form-label" for="plant-acquired_width">Width of plant when acquired (in inches)</label>
+        <label class="form-label tag is-info is-light is-medium" for="plant-acquired_width">Width of plant when acquired
+            (in
+            inches)</label>
         <input type="number" name="plant_acquired_width" value="{{plantData.acquired_width}}" />
     </div>
     <div>
-        <label class="form-label" for="plant_acquired_height">Height of plant when acquired (in inches)</label>
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_height">Height of plant when
+            acquired (in
+            inches)</label>
         <input type="number" name="plant_acquired_height" value="{{plantData.acquired_height}}" />
     </div>
     <div>
-        <label class="form-label" for="plant_acquired_additional_info">Additional Info</label>
-        <textarea name="plant_acquired_additional_info" maxlength="500" required>{{plantData.acquired_additional_info}}</textarea>
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_additional_info">Additional
+            Info</label>
+        <textarea class="textarea is-small" name="plant_acquired_additional_info" maxlength="500"
+            required>{{plantData.acquired_additional_info}}</textarea>
     </div>
-    <div>
-        <button type="submit">Update</button>
+    <div class="update-btn">
+        <button class="tag is-success is-medium" type="submit">Update</button>
     </div>
 
 </form>
-
+{{#each plantData.plant_histories}}
+{{> histories/history-block}}
+{{/each}}
 <script src="/javascript/edit-plant.js"></script>

@@ -1,9 +1,12 @@
-<div><a href="/new-species">New Species</a></div>
-<div>
+<h1 class="column title">Species</h1>
+<div class="new-species"><a href="/new-species"><i class="fas fa-plus"></i>New Species</a></div>
+<div class="edit-species">
   {{#each posts}}
+  <div>
     <a href="/edit-species/{{species_id}}">
       <span>{{common_name}}</span>
       <span>{{botanical_name}}</span>
     </a>
+  </div>
   {{/each}}
 </div>

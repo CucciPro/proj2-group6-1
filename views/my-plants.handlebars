@@ -1,9 +1,18 @@
-<div><a href="/new-plant">New Plant</a></div>
-<div>
+<h1 class="column title">My Plants</h1>
+<div class="new-plant"><a href="/new-plant"><i class="fas fa-plus"></i>New Plant</a></div>
+
+<div class="plant-base has-text-justified">
   {{#each posts}}
-    <a href="/edit-plant/{{plant_id}}">
-      <span>{{identifier}}</span>
-      <span>{{format_date_display acquired_date}}</span>
+  <div class="plant-block">
+    <a class="plant-img" href="https://placeholder.com"><img src="https://via.placeholder.com/110x70?text=%2B"></a>
+    <a class="my-plants" href="/edit-plant/{{plant_id}}">
+      <span class="identifier is-size-4">{{identifier}}</span>
+      <div>
+        <span class="date">{{format_date_display acquired_date}}</span>
+        <span class="source">{{acquired_source}}</span>
+      </div>
     </a>
+  </div>
+
   {{/each}}
 </div>

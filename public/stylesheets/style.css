@@ -1,0 +1,114 @@
+html {
+  background-color: #175240;
+}
+
+.hero-body {
+  padding: 0px;
+}
+
+.hero-body .container {
+  margin: 0px;
+}
+
+.navbar-brand {
+  font-size: 20px;
+}
+
+.navbar,
+.footer {
+  background-color: #175240;
+}
+.navbar-end a,
+.navbar-brand a {
+  margin-top: 5px;
+  color: white;
+}
+
+.navbar-item {
+  display: none;
+}
+
+.navbar-burger {
+  color: white;
+}
+
+.hero-body {
+  background-color: white;
+}
+
+.soc a i,
+.footerText {
+  color: white;
+}
+
+.new-plant {
+  text-align: left;
+  margin: 20px;
+  position: absolute;
+  top: 0;
+}
+
+.new-species {
+  text-align: left;
+  margin: 20px;
+  position: absolute;
+  top: 0;
+}
+
+#edit-plant-form,
+#new-plant-form,
+#new-species-form,
+#edit-species-form {
+  padding-bottom: 0px;
+  text-align: right;
+  position: relative;
+}
+
+div.card {
+  padding: 80px;
+}
+
+.plant-block {
+  position: relative;
+  margin: 10px;
+}
+
+.my-plants {
+  position: absolute;
+  top: 0;
+  padding-left: 10px;
+}
+
+.form-label {
+  margin: 2.5px;
+}
+
+.label-input {
+  display: flex;
+  float: right;
+}
+
+.update-btn,
+.create-btn {
+  padding: 20px;
+}
+
+@media (max-width: 1020px) {
+  body {
+    font-size: 1.5rem;
+  }
+  a.navbar-item {
+    font-size: 1.5rem;
+  }
+  .navbar-end a {
+    color: #175240;
+  }
+  #edit-plant-form,
+  #new-plant-form {
+    padding-top: 10px;
+    text-align: center;
+  }
+  div.card {
+    padding: 5px;
+  }
+}

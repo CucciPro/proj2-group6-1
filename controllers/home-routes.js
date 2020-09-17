@@ -78,18 +78,37 @@ function getSpecies(){
 }
 
 // edit-plant GET : populate form with plant data
-router.get("/edit-plant-history/:id", withAuth, (req, res) => {
-    Plant_History.findByPk(req.params.id)
+router.get("/edit-plant/:id", withAuth, (req, res) => {
+    My_Plants.findByPk(req.params.id, {
+        include: [Plant_History]
+    })
     .then(async dbPlantData => {
         if (dbPlantData) {
+            
             //this is for all the data related to the plant itself
             const plantData = dbPlantData.get({ plain: true });
             console.log(plantData);
-                console.log('you are about to render edit-plant-history maybe?....');
-                res.render("edit-plant-history", {
+            //this is calling a function that gets all the species in the db
+            //this is called in order to populate the species dropdown on the edit form
+            const species = await getSpecies();
+            const speciesList = species.map((speciesItem) => speciesItem.get({ plain: true }));
+
+            console.log(dbPlantData);
+            //if user is authorized to view plant (only if they created it) render the template
+            if (req.session.userId === plantData.user_id){
+                res.render("edit-plant", {
                     layout: "main",
                     plantData,
+                    speciesList
+
                 });
+            } 
+            //if user is not authorized to view plant (they did not create it) redirect back to dashboard
+            else {
+                //could be nice to provide user with message that they aren't authorized to access this plant record but communicating that back to the user is not essential because users shouldn't try to be sneaky and load an unauthorized plant record
+                res.redirect("/dashboard");
+            }
+            
         } else {
             res.status(404).end();
         }
@@ -210,23 +229,14 @@ router.get("/edit-plant-history/:id", withAuth, (req, res) => {
     Plant_History.findByPk(req.params.id)
     .then(async dbPlantData => {
         if (dbPlantData) {
-            
             //this is for all the data related to the plant itself
             const plantData = dbPlantData.get({ plain: true });
-
-            //if user is authorized to view plant (only if they created it) render the template
-            if (req.session.userId === plantData.user_id){
+            console.log(plantData);
+                console.log('you are about to render edit-plant-history maybe?....');
                 res.render("edit-plant-history", {
                     layout: "main",
                     plantData,
                 });
-            } 
-            //if user is not authorized to view plant (they did not create it) redirect back to dashboard
-            else {
-                //could be nice to provide user with message that they aren't authorized to access this plant record but communicating that back to the user is not essential because users shouldn't try to be sneaky and load an unauthorized plant record
-                res.redirect("/dashboard");
-            }
-            
         } else {
             res.status(404).end();
         }

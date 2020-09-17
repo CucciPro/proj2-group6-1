@@ -12,9 +12,12 @@
     <div>
         <label class="form-label" for="in_ground">In ground?</label>
         <select name="in_ground">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-            {{!-- What do I actually need to make this work it is hard coded --}}
+            {{#if in_ground}}
+            <span>Yes</span>
+            {{else}}
+            <span>No</span>
+            {{/if}}
+        
         </select>
     </div>
     <div>
@@ -32,5 +35,6 @@
     <div>
         <button type="submit">Update</button>
     </div>
+    
 </form>
 <script src="/javascript/edit-plant-history.js"></script>

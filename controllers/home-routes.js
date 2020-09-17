@@ -79,24 +79,27 @@ function getSpecies(){
 
 // edit-plant GET : populate form with plant data
 router.get("/edit-plant/:id", withAuth, (req, res) => {
-    My_Plants.findByPk(req.params.id)
+    My_Plants.findByPk(req.params.id, {
+        include: [Plant_History]
+    })
     .then(async dbPlantData => {
         if (dbPlantData) {
             
             //this is for all the data related to the plant itself
             const plantData = dbPlantData.get({ plain: true });
-            
+            console.log(plantData);
             //this is calling a function that gets all the species in the db
             //this is called in order to populate the species dropdown on the edit form
             const species = await getSpecies();
             const speciesList = species.map((speciesItem) => speciesItem.get({ plain: true }));
-
+            console.log(dbPlantData);
             //if user is authorized to view plant (only if they created it) render the template
             if (req.session.userId === plantData.user_id){
                 res.render("edit-plant", {
                     layout: "main",
                     plantData,
                     speciesList
+
                 });
             } 
             //if user is not authorized to view plant (they did not create it) redirect back to dashboard
@@ -213,7 +216,6 @@ router.post("/new-plant-history", withAuth, (req, res) => {
     const body = req.body;
     Plant_History.create({ ...body, user_id: req.session.userId })
     .then(newPlantHistory => {
-        
         return res.json(newPlantHistory);
     })
     .catch(err => {

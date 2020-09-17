@@ -48,13 +48,14 @@ function getSpecies(){
 
 // edit-plant GET : populate form with plant data
 router.get("/edit-plant/:id", withAuth, (req, res) => {
-    My_Plants.findByPk(req.params.id)
+    My_Plants.findByPk(req.params.id, {
+        include: [Plant_History]
+    })
     .then(async dbPlantData => {
         if (dbPlantData) {
             
             //this is for all the data related to the plant itself
             const plantData = dbPlantData.get({ plain: true });
-            console.log(plantData);
             
             //this is calling a function that gets all the species in the db
             //this is called in order to populate the species dropdown on the edit form

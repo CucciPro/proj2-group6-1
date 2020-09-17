@@ -44,11 +44,15 @@ html {
 .new-plant {
   text-align: left;
   margin: 20px;
+  position: absolute;
+  top: 0;
 }
 
 .new-species {
   text-align: left;
   margin: 20px;
+  position: absolute;
+  top: 0;
 }
 
 #edit-plant-form,
@@ -75,10 +79,6 @@ div.card {
   padding-left: 10px;
 }
 
-.date {
-  position: absolute;
-}
-
 .form-label {
   margin: 2.5px;
 }
@@ -88,8 +88,9 @@ div.card {
   float: right;
 }
 
-.update-btn {
-  padding: 40px;
+.update-btn,
+.create-btn {
+  padding: 20px;
 }
 
 @media (max-width: 1020px) {

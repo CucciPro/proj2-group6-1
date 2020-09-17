@@ -1,3 +1,4 @@
+<h1 class="column title">Edit Plant</h1>
 <form id="edit-plant-form">
     <input type="hidden" name="plant_id" value="{{plantData.plant_id}}" />
     <div>
@@ -45,10 +46,10 @@
     <div>
         <label class="form-label tag is-info is-light is-medium" for="plant_acquired_additional_info">Additional
             Info</label>
-        <textarea name="plant_acquired_additional_info" maxlength="500"
+        <textarea class="textarea is-small" name="plant_acquired_additional_info" maxlength="500"
             required>{{plantData.acquired_additional_info}}</textarea>
     </div>
-    <div>
+    <div class="update-btn">
         <button class="tag is-success is-medium" type="submit">Update</button>
     </div>
 

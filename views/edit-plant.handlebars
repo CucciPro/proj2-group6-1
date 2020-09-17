@@ -11,7 +11,7 @@
         <select name="plant_species_id">
             {{#each speciesList}}
             <option value="{{species_id}}"
-                {{#getSelectedSpecies species_id ../plantData.species_id}}{{/getSelectedSpecies}}>{{common_name}} -
+                {{#getSelectedValue species_id ../plantData.species_id}}{{/getSelectedValue}}>{{common_name}} -
                 {{botanical_name}}</option>
             {{/each}}
         </select>

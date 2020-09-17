@@ -52,9 +52,12 @@ html {
 }
 
 #edit-plant-form,
-#new-plant-form {
-  padding: 50px;
+#new-plant-form,
+#new-species-form,
+#edit-species-form {
+  padding-bottom: 0px;
   text-align: right;
+  position: relative;
 }
 
 div.card {
@@ -74,6 +77,19 @@ div.card {
 
 .date {
   position: absolute;
+}
+
+.form-label {
+  margin: 2.5px;
+}
+
+.label-input {
+  display: flex;
+  float: right;
+}
+
+.update-btn {
+  padding: 40px;
 }
 
 @media (max-width: 1020px) {

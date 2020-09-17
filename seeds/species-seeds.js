@@ -4,7 +4,7 @@ const speciesData = [
   {
     botanical_name: 'Laurus Nobilis', 
     common_name: 'Bay Leaf', 
-    plant_type: 'Tree', 
+    type_id: 1, 
     hardiness_zones: '10-12',
     sun_tolerance: 'Full sun : 6 hours+ of direct sunlight.  Partial sun : 3-6 hours of sunlight.', 
     drainage: 'Well drained',
@@ -21,7 +21,7 @@ const speciesData = [
   {
     botanical_name: 'Monstera Deliciosa', 
     common_name: 'Monstera Swiss Cheese Plant', 
-    plant_type: 'Flower', 
+    type_id: 2, 
     hardiness_zones: '5-10',
     sun_tolerance: 'Part sun (3 to 6 hours morning sun', 
     drainage: 'Moist',

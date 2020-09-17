@@ -76,7 +76,16 @@ function getSpecies(){
         ]
     })
 }
-
+router.get("/edit-plant", withAuth, (req, res) => {
+    const body = req.body;
+   const allPlants = My_Plants.findAll({
+        attributes: ['species_id', 'common_name', 'botanical_name'],
+        order: [
+            ['common_name', 'ASC'],
+        ]
+    })
+ return res.json(allPlants)
+ });
 // edit-plant GET : populate form with plant data
 router.get("/edit-plant/:id", withAuth, (req, res) => {
     My_Plants.findByPk(req.params.id, {

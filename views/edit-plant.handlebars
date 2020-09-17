@@ -54,5 +54,7 @@
     </div>
 
 </form>
-
+{{#each plantData.plant_histories}}
+{{> histories/history-block}}
+{{/each}}
 <script src="/javascript/edit-plant.js"></script>

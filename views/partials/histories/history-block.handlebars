@@ -1,0 +1,21 @@
+{{!-- will include row "blocks" of data to display" --}}
+
+<li>
+     <div>
+        <h1>History</h1>
+        <a href="../edit-plant-history/{{plant_id}}">+</a>
+
+    </div>
+    <a href="/edit-plant-history/{{history_id}}">date stamp: {{format_date_display dtstamp}}</a>
+    <p>in-ground? {{#if in_ground}}
+            <span>Yes</span>
+            {{else}}
+            <span>No</span>
+            {{/if}}</p>
+    <p>recType: {{rec_type}}</p>
+    <p>additional info: {{additional_info}}</p>
+
+</li>
+
+{{!-- this attempt is modeled off of an exercise from module 14 --}}
+

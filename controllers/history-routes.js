@@ -78,3 +78,5 @@ router.put("/edit-plant-history/", withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
+
+module.exports = router;

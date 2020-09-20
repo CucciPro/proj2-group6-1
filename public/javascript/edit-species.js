@@ -1,7 +1,6 @@
-const editSpeciesFormHandler = async function(event) {
+const newSpeciesFormHandler = async function(event) {
     event.preventDefault();
 
-    const species_id = document.querySelector('input[name="species_id"]').value;
     const common_name = document.querySelector('input[name="species_common"]').value;
     const botanical_name = document.querySelector('input[name="species_botanical"]').value;
     const type_id = document.querySelector('select[name="type_id"]').value;
@@ -20,10 +19,9 @@ const editSpeciesFormHandler = async function(event) {
 
     const token = localStorage.getItem("token");
 
-    await fetch('/edit-species', {
-        method: "PUT",
+    await fetch('/new-species', {
+        method: "POST",
         body: JSON.stringify({
-            species_id,
             common_name,
             botanical_name,
             type_id,
@@ -44,9 +42,12 @@ const editSpeciesFormHandler = async function(event) {
             "Content-Type": "application/json",
             authorization: `Bearer ${token}`
         }
-    });
-
-    alert("The species has been successfully updated!");
+    }).then(res => 
+        res.json()
+    ).then(
+            //once the plant is created redirect user to edit page for the new species_id
+            data => document.location.replace('http://localhost:3001/edit-species/' + data.species_id)
+      );
 };
 
-document.querySelector("#edit-species-form").addEventListener("submit", editSpeciesFormHandler);
+document.querySelector("#new-species-form").addEventListener("submit", newSpeciesFormHandler);

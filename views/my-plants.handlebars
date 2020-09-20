@@ -4,16 +4,22 @@
 </div>
 
 <div class="dashboard has-text-justified">
-  {{#each posts}}
-    <div class="dashboard-item">
-      <a class="dashboard-img" href="https://placeholder.com"><img src="https://via.placeholder.com/110x70?text=%2B"></a>
-      <a class="dashboard-anchor" href="/edit-plant/{{plant_id}}">
-        <span class="dashboard-link-main is-size-4">{{identifier}}</span>
-        <div>
-          <span class="dashboard-link-sub1">{{format_date_display acquired_date}}</span>
-          <span class="dashboard-link-sub2">{{acquired_source}}</span>
-        </div>
-      </a>
+  {{#if posts}}
+    {{#each posts}}
+      <div class="dashboard-item">
+        <a class="dashboard-img" href="https://placeholder.com"><img src="https://via.placeholder.com/110x70?text=%2B"></a>
+        <a class="dashboard-anchor" href="/edit-plant/{{plant_id}}">
+          <span class="dashboard-link-main is-size-4">{{identifier}}</span>
+          <div>
+            <span class="dashboard-link-sub1">{{format_date_display acquired_date}}</span>
+            <span class="dashboard-link-sub2">{{acquired_source}}</span>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  {{else}}
+    <div class="noPlantsMsg">
+      Click the + New Plant link above to get started on your plant journey!
     </div>
-  {{/each}}
+  {{/if}}
 </div>

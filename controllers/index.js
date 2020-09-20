@@ -14,6 +14,4 @@ router.use('/', plantRoutes);
 router.use('/', speciesRoutes);
 router.use('/', historyRoutes);
 
-
-
 module.exports = router;

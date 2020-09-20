@@ -145,6 +145,11 @@ div.card {
   padding-left: 10px;
 }
 
+.noPlantsMsg {
+  margin: 100px 0 100px 0;
+  text-align: center;
+}
+
 /* FORMS */
 
 .form_title{

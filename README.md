@@ -38,5 +38,4 @@ This project demonstrates the use of the following packages :
 1. Quit mysql : \q;
 1. Seed db : npm run seed
 1. Start the server with either of the following commands : npm start -or- node server.js
-1. Additonial items tbd
 

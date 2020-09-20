@@ -1,0 +1,19 @@
+<div class="dashboard-header">
+  <h1>Species Dashboard</h1>
+  <div class="action-new"><a href="/new-species"><i class="fas fa-plus"></i> New Species</a></div>
+</div>
+
+<div class="dashboard has-text-justified">
+  {{#each posts}}
+      <div class="dashboard-item">
+        <a class="dashboard-img" href="https://placeholder.com"><img src="https://via.placeholder.com/110x70?text=%2B"></a>
+        <a class="dashboard-anchor" href="/edit-species/{{species_id}}">
+          <span class="dashboard-link-main is-size-4">{{common_name}}</span>
+          <div>
+            <span class="dashboard-link-sub1">{{botanical_name}}</span>
+            <span class="dashboard-link-sub2">&nbsp;</span>
+          </div>
+        </a>
+      </div>
+  {{/each}}
+</div>

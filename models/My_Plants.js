@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 
 class My_Plants extends Model {}
 
+//console.log('='.repeat(50) + '\n models/my_plants.js : line 6 \n' + '='.repeat(50));
+
 My_Plants.init(
   {
     plant_id: {
@@ -22,9 +24,10 @@ My_Plants.init(
     identifier: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-          len: [100]
-      }
+      //commented out because post failed when this was present
+      //validate: {
+          //len: [100]
+      //}
     },
     acquired_date: DataTypes.DATE,
     acquired_source: DataTypes.STRING,

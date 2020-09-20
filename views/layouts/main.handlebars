@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project Name TBD</title>
-        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/stylesheets/style.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weed It & Reap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
 
-    <body>
-
-        <nav>
-            <div>
-                <h1><a href="/">Project Name TBD</a></h1>
+<body>
+    <!-- START NAV -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/dashboard">
+                    <i class="fas fa-leaf"></i>
+                    <span class="app-title">Weed It & Reap</span>
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
             </div>
-            <div>
-                <ul>
-                    <!-- login nav item should only show if user is not logged in or user is not logged in and are on the join page -->
-                    <li><a href="/login">Login</a></li>
-                    <!-- join nav item should only show if user is not logged in and user is on login page -->
-                    <li><a href="/join">Join</a></li>
-                    <!-- dashboard nav item should only show if user is logged in and not on the dashboard page -->
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <!-- species nav item should only show if user is logged in and user is not on the species page -->
-                    <li><a href="/species">Species</a></li>
-                    <!-- logout nav item should only show if user is logged in -->
-                    <li><a href="#" id="logout-link">Logout</a></li>
-                </ul>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="tabs is-right">
+                        <ul>
+                            <li><a href="/login" id="navLogin" class="navbar-item">Login</a></li>
+                            <li><a href="/join" id="navJoin" class="navbar-item">Join</a></li>
+                            <li><a href="/dashboard" id="navDashboard" class="navbar-item">My Plants</a></li>
+                            <li><a href="/species" id="navSpecies" class="navbar-item">Species</a></li>
+                            <li><a href="#" id="navLogout" class="navbar-item">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </div>
+    </nav>
+    <!-- END NAV -->
 
-        <header><!-- header image goes here --></header>
+    <!-- START MAIN CONTAINTER -->
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="columns">
+                <div class="column is-5 imgcolumn">
+                    <figure class="image is-4by3 show-hide-hero-image">
+                        <img src="/assets/images/hero.jpg" alt="Description">
+                    </figure>
+                </div>
+                {{!-- <div class="column is-6 is-offset-1"> --}}
+                <div class="column is-6 bodyContent">
+                    {{{body}}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTAINTER -->
 
-        <main>
-            {{{body}}}
-        </main>
-
-        <footer>
-            <div>A Jasso, McClennan, Norman, Senneff Production</div>
-            <div>All Rights Reserved</div>
-        </footer>
-
-    </body>
+    <!-- START FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                {{!-- if we had social these links would work --}}
+                <div class="soc">
+                    <a href="#"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+                </div>
+                <p class="footerText">
+                    A Jasso, McClellan, Norman, Senneff Production<br />
+                    All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+</body>
 
 </html>
+<script src="/javascript/navigation.js"></script>
 <script src="/javascript/logout.js"></script>

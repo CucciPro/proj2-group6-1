@@ -1,3 +1,52 @@
-<div>
-    PLACEHOLDER : new-plant ... needs work
-</div>
+<h1 class="form_title">Create New Plant</h1>
+<form id="new-plant-form">
+
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="plant_identifier">Short name for your plant (100
+            chars)</label>
+        <input type="text" name="plant_identifier" autofocus maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="plant_species_id">Species</label>
+        <select name="plant_species_id">
+            {{#each speciesItems}}
+            <option value="{{species_id}}">{{common_name}} - {{botanical_name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_date">Acquired Date</label>
+        <input type="date" name="plant_acquired_date" placeholder="dd/mm/yyyy"
+            pattern="(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)"
+            required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_source">Acquired Source</label>
+        <input type="text" name="plant_acquired_source" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_origin">Acquired Origin</label>
+        <input type="text" name="plant_acquired_origin" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="plant-acquired_width">Width of plant when acquired
+            (in inches)</label>
+        <input type="number" name="plant_acquired_width" required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_height">Height of plant when
+            acquired (in inches)</label>
+        <input type="number" name="plant_acquired_height" required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="plant_acquired_additional_info">Additional
+            Info</label>
+        <textarea class="textarea is-small" name="plant_acquired_additional_info" maxlength="500" required></textarea>
+    </div>
+    <div class="create-btn">
+        <button class="tag is-success is-medium" type="submit">Create</button>
+    </div>
+
+</form>
+
+<script src="/javascript/new-plant.js"></script>

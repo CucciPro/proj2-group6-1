@@ -23,8 +23,15 @@ app.use(session(sess));
 
 const hbs = exphbs.create({
   helpers: {
-    format_date: date => {
-      return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    format_date_input: date => {
+      return `${date.getUTCFullYear()}-${('0' + (date.getUTCMonth() + 1)).slice(-2)}-${('0' + date.getUTCDate()).slice(-2)}`;
+    },
+    format_date_display: date => {
+      return `${('0' + (date.getUTCMonth() + 1)).slice(-2)}/${('0' + date.getUTCDate()).slice(-2)}/${date.getUTCFullYear()}`;
+    },
+    getSelectedValue: (arg1,arg2) => {
+      //console.log(arg1,arg2);
+      return arg1 === arg2 ? 'selected' : false;
     }
   }
 });
@@ -39,5 +46,5 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening at localhost:3001'));
+  app.listen(PORT, () => console.log('='.repeat(50) + '\n Now listening at localhost:3001 \n' + '='.repeat(50)));
 });

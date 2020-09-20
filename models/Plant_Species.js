@@ -1,9 +1,9 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Species extends Model {}
+class Plant_Species extends Model {}
 
-Species.init(
+Plant_Species.init(
   {
     species_id: {
         type: DataTypes.INTEGER,
@@ -13,14 +13,15 @@ Species.init(
     },
     botanical_name: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false,
     },
     common_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    plant_type: {
-        type: DataTypes.STRING,
+    type_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
     },  
     hardiness_zones: DataTypes.STRING,
@@ -62,4 +63,4 @@ Species.init(
   }
 );
 
-module.exports = Species;
+module.exports = Plant_Species;

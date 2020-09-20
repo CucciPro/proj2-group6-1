@@ -1,0 +1,35 @@
+<h1 class="form_title">New Plant History</h1>
+<form id="new-plant-history">
+    <input type="hidden" name="plant_id" value="{{this_plant_id}}" />
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="rec_type">Record Type (General, Watering, Feeding, etc)</label>
+        <input type="text" name="rec_type" autofocus maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="loc">Location</label>
+        <input type="text" name="loc" required/>
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="in_ground">In ground?</label>
+        <select name="in_ground">
+            <option value="1"> Yes </option>
+            <option value="0"> No </option>
+        </select>
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="direct_sunlight_hours">Sunlight Hours</label>
+        <input type="number" name="direct_sunlight_hours" maxlength="100" required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="watering_schedule">Watering Schedule</label>
+        <input type="text" name="watering_schedule" required />
+    </div>
+    <div>
+        <label class="form-label tag is-info is-light is-medium" for="additional_info">Additional Info</label>
+        <textarea name="additional_info" maxlength="500" required></textarea>
+    </div>
+    <div>
+        <button class="tag is-success is-medium" type="submit">Create</button>
+    </div>
+</form>
+<script src="/javascript/new-plant-history.js"></script>

@@ -1,0 +1,110 @@
+<div>
+    <h1 class="column is-multiline title">Edit this Species</h1>
+    <form class="columns" id="edit-species-form">
+        <div class="column">
+            <input type="hidden" name="species_id" value="{{speciesData.species_id}}" />
+            <div class="label-input">
+                <label class="form-label tag is-info is-light is-medium" for="species_common">Common
+                    Name</label>
+                <input class="input is-small" type="text" name="species_common" value="{{speciesData.common_name}}"
+                    autofocus maxlength="100" required />
+            </div>
+            <div class="label-input">
+                <label class="form-label tag is-info is-light is-medium" for="species_botanical">Botanical Name</label>
+                <input class="input is-small" type="text" name="species_botanical"
+                    value="{{speciesData.botanical_name}}" maxlength="100" required />
+            </div>
+            <div>
+                <label class="form-label tag is-info is-light is-medium" for="type_id">Type of plant</label>
+                <select class="select is-small" name="type_id">
+                    {{#each editTypeList}}
+                    <option value="{{type_id}}" {{#getSelectedValue type_id ../post.type_id}}{{/getSelectedValue}}>
+                        {{type_name}}</option>
+                    {{/each}}
+                </select>
+                <div class="label-input">
+                    <label class="form-label tag is-info is-light is-medium" for="species_hardiness">Hardiness
+                        zones?</label>
+                    <input class="input is-small" type="text" name="species_hardiness"
+                        value="{{speciesData.hardiness_zones}}" maxlength="100" required />
+                </div>
+                <div class="label-input">
+                    <label class="form-label tag is-info is-light is-medium" for="species_tolerance">Sun
+                        tolerence?</label>
+                    <input class="input is-small" type="text" name="species_tolerance"
+                        value="{{speciesData.sun_tolerance}}" maxlength="100" required />
+                </div>
+                <div class="label-input">
+                    <label class="form-label tag is-info is-light is-medium" for="species_drainage">Drainage
+                        type?</label>
+                    <input class="input is-small" type="text" name="species_drainage" value="{{speciesData.drainage}}"
+                        maxlength="100" required />
+                </div>
+                <div class="">
+                    <label class="form-label tag is-info is-light is-medium" for="species_water">Water
+                        requirements?</label>
+                    <input class="input is-small" type="text" name="species_water"
+                        value="{{speciesData.water_requirements}}" maxlength="100" required />
+                </div>
+                <div class="">
+                    <label class="form-label tag is-info is-light is-medium" for="species_feeding">Season to start
+                        feeding?</label>
+                    <input class="input is-small" type="text" name="species_feeding"
+                        value="{{speciesData.feeding_schedule}}" maxlength="100" required />
+                </div>
+            </div>
+        </div>
+        <div class="column">
+
+            <div class="label-input">
+                <label class="form-label tag is-info is-light is-medium" for="species_growth">Expected
+                    growth rate?</label>
+                <input class="input is-small" type="text" name="species_growth" value="{{speciesData.growth_rate}}"
+                    maxlength="100" required />
+            </div>
+            <div class="label-input">
+                <label class="form-label tag is-info is-light is-medium" for="species_width">Mature width
+                    (inches)?</label>
+                <input class="input is-small" type="number" name="species_width" value="{{speciesData.mature_width}}"
+                    required />
+            </div>
+            <div class="label-input">
+                <label class="form-label tag is-info is-light is-medium" for="species_height">Mature height
+                    (inches)?</label>
+                <input class="input is-small" type="number" name="species_height" value="{{speciesData.mature_height}}"
+                    required />
+            </div>
+            <div class="label-input">
+                <label class="form-label tag is-info is-light is-medium" for="species_spacing">Spacing of plant
+                    (inches)?</label>
+                <input class="input is-small" type="number" name="species_spacing" value="{{speciesData.spacing}}"
+                    required />
+            </div>
+            <div class="label-input">
+                <label class="form-label tag is-info is-light is-medium" for="species_depth">Depth of plant
+                    (inches)?</label>
+                <input class="input is-small" type="number" name="species_depth" value="{{speciesData.depth}}"
+                    required />
+            </div>
+            <div class="label-input">
+                <label class="form-label tag is-info is-light is-medium" for="species_planting">Season to
+                    plant?</label>
+                <input class="input is-small" type="text" name="species_planting" value="{{speciesData.when_to_plant}}"
+                    maxlength="100" required />
+            </div>
+            <div class="">
+                <label class="form-label tag is-info is-light is-medium" for="species_additional_info">Additional
+                    Info</label>
+                <textarea class="textarea is-small" name="species_additional_info" maxlength="500"
+                    required>{{speciesData.additional_info}}</textarea>
+            </div>
+            <div class="update-btn">
+                <button class="tag is-success is-medium" type="submit">Update</button>
+            </div>
+        </div>
+
+
+    </form>
+
+    <script src="/javascript/edit-species.js"></script>
+</div>

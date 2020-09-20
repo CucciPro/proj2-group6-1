@@ -1,1 +1,284 @@
-/*stylesheet*/
+html {
+  background-color: #175240;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.navbar .container {
+  height: 100px;
+}
+
+.hero-body {
+  padding: 0px;
+}
+
+.imgcolumn {
+  background-image: url('../assets/images/hero.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.show-hide-hero-image {
+  display: none;
+}
+
+.columns:last-child {
+  margin-bottom: 0rem;
+}
+
+.hero-body .container {
+  /* margin: 0px; */
+}
+
+.navbar-brand {
+  font-size: 35px;
+  margin-top: 10px;
+}
+
+.tabs ul {
+  border-bottom-style: none;
+}
+
+.navbar,
+.footer {
+  background-color: #175240;
+}
+.navbar {
+  padding: 0px 50px 0px 50px;
+}
+
+.footer {
+  padding: 25px 10px 25px 10px;
+}
+
+.navbar-end a,
+.navbar-brand a {
+  margin-top: 5px;
+  color: white;
+}
+
+.intro{
+  margin: 15px 0 15px 0;
+  font-size: 2rem;
+}
+
+.introFormHeader {
+  margin-bottom: 10px;
+}
+
+.app-title {
+  padding-left: 10px;
+}
+
+.navbar-item {
+  display:block; 
+}
+
+.navbar-burger {
+  color: white;
+  margin-top: 5px;
+}
+
+.hero-body {
+  background-color: white;
+}
+
+.soc a i,
+.footerText {
+  color: white;
+}
+
+.new-plant {
+  text-align: left;
+  margin: 20px;
+  position: absolute;
+  top: 0;
+}
+
+.new-species {
+  text-align: left;
+  margin: 20px;
+  position: absolute;
+  top: 0;
+}
+
+#edit-plant-form,
+#new-plant-form,
+#new-species-form,
+#edit-species-form {
+  padding-bottom: 0px;
+  text-align: right;
+  position: relative;
+}
+
+div.card {
+  padding: 80px;
+}
+
+/* DASHBOARDS */
+
+.dashboard-header {
+  width: 100%;
+  text-align: left;
+  margin: 10px 0 15px 0;
+}
+
+.dashboard-header h1 {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.dashboard-header div {
+  font-weight: bold;
+}
+
+.dashboard-item {
+  position: relative;
+  margin: 10px;
+}
+
+.dashboard-anchor {
+  position: absolute;
+  top: 0;
+  padding-left: 10px;
+}
+
+.noPlantsMsg {
+  margin: 100px 0 100px 0;
+  text-align: center;
+}
+
+/* FORMS */
+
+.form_title{
+  text-align: left;
+  font-size: 2em;
+}
+
+.form-label {
+  margin: 2.5px;
+}
+
+.label-input {
+  display: flex;
+  float: right;
+}
+
+.update-btn,
+.create-btn {
+  padding: 20px;
+}
+
+
+
+/* PLANT HISTORY */
+
+#plant-history{
+  margin: 10px 5px 15px 5px;
+}
+
+.plant-history-header {
+  display: inline-block;
+  width: 100%;
+}
+
+.plant-history-h2 h2 {
+  font-weight: bold;
+  float: left;
+}
+
+.plant-history-h2 {
+  text-align: left;
+  font-weight: bold;
+  float: left;
+}
+
+.plant-history-help-text{
+  text-align: left;
+  font-style: italic;
+  color: #767777;
+}
+
+.plant-history-new-icon {
+  font-weight: bold;
+  float: right;
+}
+
+.history_record_item {
+  border: 1px solid gray;
+  background-color: lightgray;
+  padding: 0 10px 0 10px;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.history_record_link {
+  float: left;
+}
+
+.history_record_rec_type {
+  float: left;
+  font-weight: bold;
+}
+
+.history_record_additional_info {
+  float: left;
+}
+
+.history_record_spacer {
+  float: left;
+  margin: 0 15px 0 15px;
+  color: #175240;
+}
+
+@media (max-width: 1020px) {
+  body {
+    font-size: 1.5rem;
+  }
+  .navbar {
+  padding: 0px 10px 0px 10px;
+}
+  .navbar .container {
+    height: auto;
+  }
+  .navbar-brand i, .navbar-brand span {
+    font-size: 1.5rem;
+  }
+  a.navbar-item {
+    font-size: 1rem;
+  }
+  .navbar-end a {
+    color: #175240;
+  }
+  .imgcolumn {
+    background-image: none;
+  }
+  .show-hide-hero-image {
+    display: block;
+  }
+  .bodyContent {
+    padding: 40px;
+  }
+  #edit-plant-form,
+  #new-plant-form {
+    padding-top: 10px;
+    text-align: center;
+  }
+  div.card {
+    padding: 5px;
+  }
+  .plant-history-help-text{
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .history_record_item {
+    font-size: 1.2rem;
+  }
+  .footerText {
+    font-size: 1rem;
+  }
+}

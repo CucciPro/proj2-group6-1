@@ -5,7 +5,7 @@ This project demonstrates the use of the following packages :
 - <a href="https://www.npmjs.com/package/express-session" target="_blank">express-session</a>
 - <a href="https://www.npmjs.com/package/express-handlebars" target="_blank">express-handlebars</a>
 - <a href="https://www.npmjs.com/package/sequelize" target="_blank">sequelize</a>
-- <a href="hhttps://www.npmjs.com/package/connect-session-sequelize" target="_blank">connect session sequelize</a>
+- <a href="https://www.npmjs.com/package/connect-session-sequelize" target="_blank">connect session sequelize</a>
 - <a href="https://www.npmjs.com/package/mysql2" target="_blank">mysql12</a>
 - <a href="https://www.npmjs.com/package/dotenv" target="_blank">dotenv</a>
 - <a href="https://www.npmjs.com/package/bcrypt" target="_blank">bycrypt</a>

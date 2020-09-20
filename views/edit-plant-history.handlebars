@@ -1,43 +1,39 @@
-<h1 class="form_title">Edit Plant History</h1>
 <form id="edit-plant-history">
     <input type="hidden" name="plant_history_id" value="{{plantData.history_id}}" />
     <input type="hidden" name="plant_id" value="{{plantData.plant_id}}" />
     <div>
-        <label class="form-label tag is-info is-light is-medium" for="rec_type">Type</label>
+        <label class="form-label" for="rec_type">Type</label>
         <input type="text" name="rec_type" autofocus maxlength="100" value="{{plantData.rec_type}}" required />
     </div>
     <div>
-        <label class="form-label tag is-info is-light is-medium" for="loc">Location</label>
+        <label class="form-label" for="loc">Location</label>
         <input type="text" name="loc" value="{{plantData.loc}}"required/>
     </div>
     <div>
-        <label class="form-label tag is-info is-light is-medium" for="in_ground">In ground?{{plantData.in_ground}}</label>
+        <label class="form-label" for="in_ground">In ground?</label>
         <select name="in_ground">
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-            {{!-- {{#if in_ground}}
-                <option value="1" selected>Yes</option>
-                <option value="0">No</option>
+            {{#if in_ground}}
+            <span>Yes</span>
             {{else}}
-                <option value="1">Yes</option>
-                <option value="0" selected>No</option>
-            {{/if}} --}}
+            <span>No</span>
+            {{/if}}
+        
         </select>
     </div>
     <div>
-        <label class="form-label tag is-info is-light is-medium" for="direct_sunlight_hours">Sunlight Hours</label>
+        <label class="form-label" for="direct_sunlight_hours">Sunlight Hours</label>
         <input type="number" name="direct_sunlight_hours" maxlength="100" value="{{plantData.direct_sunlight_hours}}" required />
     </div>
     <div>
-        <label class="form-label tag is-info is-light is-medium" for="watering_schedule">Watering Schedule</label>
+        <label class="form-label" for="watering_schedule">Watering Schedule</label>
         <input type="text" name="watering_schedule" value="{{plantData.watering_schedule}}" required />
     </div>
     <div>
-        <label class="form-label tag is-info is-light is-medium" for="additional_info">Additional Info</label>
+        <label class="form-label" for="additional_info">Additional Info</label>
         <textarea name="additional_info" maxlength="500" required>{{plantData.additional_info}}</textarea>
     </div>
     <div>
-        <button class="tag is-success is-medium" type="submit">Update</button>
+        <button type="submit">Update</button>
     </div>
     
 </form>

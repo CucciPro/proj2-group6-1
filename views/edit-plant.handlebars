@@ -1,4 +1,4 @@
-<h1 class="column title">Edit Plant</h1>
+<h1 class="form_title">Edit Plant</h1>
 <form id="edit-plant-form">
     <input type="hidden" name="plant_id" value="{{plantData.plant_id}}" />
     <div>
@@ -54,5 +54,27 @@
     </div>
 
 </form>
+
+<div id="plant-history">
+     <div class="plant-history-header">
+         <div class="plant-history-h2"><h2>Plant History</h2></div>
+         <div class="plant-history-new-icon"><a href="../new-plant-history/{{plantData.plant_id}}">+</a></div>
+    </div>
+    <div class="plant-history-help-text">
+         <div>Click on the history date to see/edit full history record</div>
+    </div>
+    {{!-- start : if there are history records load the history partial --}}
+    {{#if plantData.plant_histories}}
+        {{#each plantData.plant_histories}}
+            {{> histories/history-block}}
+        {{/each}}
+    {{else}}
+        There are currently no history records for this plant.<br />
+        Click the plus sign to add a history record.
+    {{/if}}
+    {{!-- end : if there are history records load the history partial --}}
+</div>
+
+
 
 <script src="/javascript/edit-plant.js"></script>

@@ -1,18 +1,28 @@
+<div class="intro">
+  <h1>
+    Welcome to Weed It & Reap!
+  </h1>
+</div>
 <div class="card">
-  <div class="card-header">
+  {{!-- <div class="card-header">
     <h2>Login</h2>
+  </div> --}}
+  <div class="introFormHeader">
+    <p>
+      <span style="font-weight: bold;">Already a user?  Use the login form below to login.</span><br />
+      <a href="/join">Not already a user? Click here to join.</a>
+    </p>
   </div>
   <form id="login-form" class="card-body">
     <div>
-      <label for="useremail-input-login">User Email</label>
-      <input type="text" id="useremail-input-login" />
+      <label for="useremail-input-login">Email</label>
+      <input type="text" id="useremail-input-login" required size="40" />
     </div>
     <div>
       <label for="password-input-login">Password</label>
-      <input type="password" id="password-input-login" />
+      <input type="password" id="password-input-login" required size="6" />
     </div>
     <button type="submit" id="login-btn" class="btn">Login!</button>
-    <a href="/join">Not already a user? Click here to join.</a>
   </form>
 </div>
 

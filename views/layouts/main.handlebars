@@ -16,9 +16,9 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="/dashboard" style="display:block;"><i class="fas fa-seedling"></i>
-                    {{!-- <img src="https://cdn.emk.dev/templates/bulma-logo-light.png" alt="Logo"> --}}
-                    Weed It & Reap
+                <a class="navbar-item" href="/dashboard">
+                    <i class="fas fa-leaf"></i>
+                    <span class="app-title">Weed It & Reap</span>
                 </a>
                 <span class="navbar-burger burger" data-target="navbarMenu">
                     <span></span>
@@ -32,7 +32,7 @@
                         <ul>
                             <li><a href="/login" id="navLogin" class="navbar-item">Login</a></li>
                             <li><a href="/join" id="navJoin" class="navbar-item">Join</a></li>
-                            <li><a href="/dashboard" id="navDashboard" class="navbar-item">Dashboard</a></li>
+                            <li><a href="/dashboard" id="navDashboard" class="navbar-item">My Plants</a></li>
                             <li><a href="/species" id="navSpecies" class="navbar-item">Species</a></li>
                             <li><a href="#" id="navLogout" class="navbar-item">Logout</a></li>
                         </ul>
@@ -47,13 +47,13 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <div class="columns">
-                <div class="column is-5">
-                    <figure class="image is-4by3">
+                <div class="column is-5 imgcolumn">
+                    <figure class="image is-4by3 show-hide-hero-image">
                         <img src="/assets/images/hero.jpg" alt="Description">
                     </figure>
                 </div>
                 {{!-- <div class="column is-6 is-offset-1"> --}}
-                <div class="column is-6">
+                <div class="column is-6 bodyContent">
                     {{{body}}}
                 </div>
             </div>

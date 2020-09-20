@@ -48,7 +48,9 @@ function getSpecies(){
 
 // edit-plant GET : populate form with plant data
 router.get("/edit-plant/:id", withAuth, (req, res) => {
-    My_Plants.findByPk(req.params.id)
+    My_Plants.findByPk(req.params.id, {
+        include: [Plant_History]
+    })
     .then(async dbPlantData => {
         if (dbPlantData) {
             
@@ -88,9 +90,6 @@ router.get("/edit-plant/:id", withAuth, (req, res) => {
 
 // edit plant - PUT - update
 router.put("/edit-plant/", withAuth, (req, res) => {
-    //console.log('='.repeat(50) + '\n home-routes.js : /edit-plant POST : line 95 \n' + '='.repeat(50));
-    //console.log(req.body);
-    //this_plant_id = req.body.plant_id;
     My_Plants.update(req.body, {
         where: {
             plant_id: req.body.plant_id

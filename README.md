@@ -29,7 +29,7 @@ This project demonstrates the use of the following packages :
 
     DB_USER='root'
     
-    DB_PW='<your mysql password goes here>'
+    DB_PW='your mysql password goes here'
 
 1. Start mysql (this step is where the walkthrough video starts) : mysql -u root -p
 1. If prompted for a password, enter the password for your mysql db
@@ -38,5 +38,4 @@ This project demonstrates the use of the following packages :
 1. Quit mysql : \q;
 1. Seed db : npm run seed
 1. Start the server with either of the following commands : npm start -or- node server.js
-1. Additonial items tbd
 

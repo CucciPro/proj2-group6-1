@@ -11,24 +11,6 @@ This project demonstrates the use of the following packages :
 - <a href="https://www.npmjs.com/package/bcrypt" target="_blank">bycrypt</a>
 - <a href="https://bulma.io/" target="_blank">bulma</a>
 
-
-## Video Walkthrough - TBD
-
-![Project Walkthrough](https://github.com/nnorman15/proj2-group6/blob/master/assets/video/walkthrough.gif "Project Walkthrough GIF")
-
-Video Walkthrough mp4 can be download by clicking on the walkthrough.mp4 file link in the list of files above.
-
-The walkthrough demonstrates the following : 
-
-- start mysql : mysql -u root -p
-- if prompted for a password, enter the password for your mysql db
-- create schema : source db/schema.sql
-- quit sql : \q;
-- seed db : npm run seed
-- start server : npm start
-- additional items tbd
-
-
 ## Setup Instructions
 
 *Instructions written for Windows.*

@@ -46,7 +46,7 @@ const newSpeciesFormHandler = async function(event) {
         res.json()
     ).then(
             //once the plant is created redirect user to edit page for the new species_id
-            data => document.location.replace('http://localhost:3001/edit-species/' + data.species_id)
+            data => document.location.replace('https://weed-it.herokuapp.com/edit-species/' + data.species_id)
       );
 };
 

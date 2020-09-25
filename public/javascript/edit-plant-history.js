@@ -31,6 +31,6 @@ const newFormHandler = async function(event) {
     });
     //once the history record is updated redirect user to edit plant page so they can see all the history records
     alert("The history record has been successfully updated!");
-    document.location.replace('http://localhost:3001/edit-plant/' + plant_id);
+    document.location.replace('https://weed-it.herokuapp.com/edit-plant/' + plant_id);
 };
 document.querySelector("#edit-plant-history").addEventListener("submit", newFormHandler); 

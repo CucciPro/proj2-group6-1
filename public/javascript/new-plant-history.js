@@ -33,7 +33,7 @@ const newFormHandler = async function(event) {
         res.json()
     ).then(
         //once the plant is created redirect user to edit page for the new plant_id
-        data => document.location.replace('http://localhost:3001/edit-plant/' + data.plant_id)
+        data => document.location.replace('https://weed-it.herokuapp.com/edit-plant/' + data.plant_id)
     );
 };
 document.querySelector("#new-plant-history").addEventListener("submit", newFormHandler); 
